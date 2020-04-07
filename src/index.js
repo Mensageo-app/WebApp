@@ -12,10 +12,10 @@ import {IntlProvider} from "react-intl";
 import messages_en from "./translations/en.json";
 
 ReactDOM.render(
-    <Provider store={createStore(reducers, applyMiddleware(thunk))}>
-        <IntlProvider locale="en" messages={messages_en}>
-            <App />
-        </IntlProvider>
-    </Provider>,
+    <IntlProvider locale="en" messages={messages_en}>
+        <Provider store={createStore(reducers, applyMiddleware(thunk))}>
+            <App/>
+        </Provider>
+    </IntlProvider>,
     document.querySelector("#root")
 );
