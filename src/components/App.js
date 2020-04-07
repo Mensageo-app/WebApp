@@ -1,9 +1,11 @@
 import React from "react";
+import {FormattedMessage} from 'react-intl';
 
 class App extends React.Component {
 
     render() {
-        return <div>Mensageo</div>
+        return <div><FormattedMessage id="app.text"
+                                      defaultMessage="Mensageo"/></div>
     }
 }
 
