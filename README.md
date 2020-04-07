@@ -13,7 +13,7 @@ You will also see any lint errors in the console.
 ### `yarn install`
 
 Install all the updates.
-  
+
 ### `yarn test`
 
 Launches the test runner in the interactive watch mode.<br />
