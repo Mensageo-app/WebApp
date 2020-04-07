@@ -1,11 +1,15 @@
 import React from "react";
-import {FormattedMessage} from 'react-intl';
+import {FormattedMessage} from 'react-intl'
+import CategoryList from "./categories/CategoryList";
+
 
 class App extends React.Component {
 
     render() {
-        return <div><FormattedMessage id="app.text"
-                                      defaultMessage="Mensageo"/></div>
+        return <div>
+            <FormattedMessage id="app.text" defaultMessage="Mensageo"/>
+            <CategoryList/>
+        </div>
     }
 }
 
