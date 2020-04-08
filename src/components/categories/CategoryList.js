@@ -1,6 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
 import {fetchCategories} from "../../actions";
+import CategoryCard from "./CategoryCard";
 
 class CategoryList extends React.Component {
     componentDidMount() {
@@ -11,16 +12,7 @@ class CategoryList extends React.Component {
         const categories = this.props.categories;
         if (categories && categories.length > 0) {
             return categories.map(category => {
-                return (
-                    <div className="item" key={category.id}>
-                        <div className="content">
-                            {category.name}
-                        </div>
-                        <div className="description">
-                            {category.quantity}
-                        </div>
-                    </div>
-                )
+                return <div key={category.id}><CategoryCard category={category}/><br/></div>
             })
         } else {
             return <div>Loading ...</div>
