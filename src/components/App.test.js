@@ -5,6 +5,8 @@ import configureMockStore from 'redux-mock-store';
 import {Provider} from "react-redux";
 const mockStore = configureMockStore();
 
+jest.mock("./categories/CategoryList", () => 'CategoryList');
+
 it("renders without errors", () => {
     const store = mockStore({});
     const div = document.createElement("div");

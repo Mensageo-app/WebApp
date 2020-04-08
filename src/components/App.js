@@ -1,16 +1,26 @@
 import React from "react";
 import {FormattedMessage} from 'react-intl'
 import CategoryList from "./categories/CategoryList";
+import history from "../history";
+
+import {Router, Switch, Route} from 'react-router-dom'
 
 
-class App extends React.Component {
-
-    render() {
-        return <div>
+const App = () => {
+    return (
+        <div>
             <FormattedMessage id="app.text" defaultMessage="Mensageo"/>
-            <CategoryList/>
+            <div className="ui container">
+                <Router history={history}>
+                    <div>
+                        <Switch>
+                            <Route path="/" exact component={CategoryList}/>
+                        </Switch>
+                    </div>
+                </Router>
+            </div>
         </div>
-    }
+    )
 }
 
 export default App;

@@ -39,5 +39,5 @@ with the proper keys:
 
 You can find more options and information: https://github.com/formatjs/react-intl
 
-### Using the mock server `https://github.com/Mensageo-app/mock_api_server`
+### Using the mock server
 Clone https://github.com/Mensageo-app/mock_api_server, run `npm install` and `npm start` to have a json server serving mock data for mensageo app.
