@@ -4,7 +4,7 @@ import {fetchCategories} from "../../actions";
 
 class CategoryList extends React.Component {
     componentDidMount() {
-       this.props.fetchCategories();
+        this.props.fetchCategories();
     }
 
     renderList() {
@@ -12,18 +12,17 @@ class CategoryList extends React.Component {
         if (categories && categories.length > 0) {
             return categories.map(category => {
                 return (
-                    <div className="item" key={category.uid}>
-                        <i className="large middle aligned icon camera"/>
+                    <div className="item" key={category.id}>
                         <div className="content">
                             {category.name}
                         </div>
                         <div className="description">
-                            {category.amount}
+                            {category.quantity}
                         </div>
                     </div>
                 )
             })
-        }else {
+        } else {
             return <div>Loading ...</div>
         }
     }
@@ -37,7 +36,7 @@ class CategoryList extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    return {categories:  Object.values(state.categories)}
+    return {categories: Object.values(state.categories)}
 }
 
 export default connect(mapStateToProps, {fetchCategories})(CategoryList);
