@@ -8,14 +8,20 @@ import reducers from "./reducers"
 import thunk from "redux-thunk";
 import {IntlProvider} from "react-intl";
 
+import {MuiThemeProvider} from "@material-ui/core/styles";
+import Theme from "./components/Theme";
+
 // import messages_es from "./translations/es.json"; // use this to change to spanish
 import messages_en from "./translations/en.json";
 
 ReactDOM.render(
-    <IntlProvider locale="en" messages={messages_en}>
-        <Provider store={createStore(reducers, applyMiddleware(thunk))}>
-            <App/>
-        </Provider>
-    </IntlProvider>,
+    <MuiThemeProvider theme={Theme}>
+        <IntlProvider locale="en" messages={messages_en}>
+            <Provider store={createStore(reducers, applyMiddleware(thunk))}>
+                <App/>
+            </Provider>
+        </IntlProvider>
+    </MuiThemeProvider>,
+
     document.querySelector("#root")
 );
