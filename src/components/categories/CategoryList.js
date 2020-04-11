@@ -11,8 +11,8 @@ class CategoryList extends React.Component {
     }
 
     renderContainer(categories) {
-        return <Container maxWidth="md">
-            <Grid container spacing={4}>
+        return <Container maxWidth="lg">
+            <Grid container spacing={4} >
                 {categories.map(category => {
                     return <CategoryCard category={category} key={category.id}/>
                 })}

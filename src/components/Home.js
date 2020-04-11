@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import CategoryList from "./categories/CategoryList";
 import BrandToolBar from "./BrandToolBar";
+import NeedUpdate from "./NeedUpdate";
 
 const Home = () => {
     return (
@@ -12,6 +13,7 @@ const Home = () => {
             <BrandToolBar/>
             <main>
                 <Header/>
+                <NeedUpdate/>
                 <CategoryList/>
             </main>
             <Footer/>

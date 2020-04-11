@@ -11,5 +11,7 @@
   "information.right.deal": "* Deal directly with the end user. No middlemen and no fees.",
   "information.right.title": "Health Professionals",
   "information.right.button": "LIST YOUR NEEDS",
-  "header.title": "We connect health organizations with makers of critical equipment."
+  "header.title": "We connect health organizations with makers of critical equipment.",
+  "need.update.title": "There’s a need for...",
+  "need.update.last": "Last Updated: "
 }

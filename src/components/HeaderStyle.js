@@ -6,6 +6,7 @@ export const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(2, 0, 6),
         color: "#ffffff",
         mixBlendMode: "normal",
+        boxShadow: theme.palette.boxShadow,
     },
     heroButtons: {
         marginTop: theme.spacing(4),
