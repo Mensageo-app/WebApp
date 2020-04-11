@@ -15,13 +15,12 @@ import Theme from "./components/Theme";
 import messages_en from "./translations/en.json";
 
 ReactDOM.render(
-    <MuiThemeProvider theme={Theme}>
-        <IntlProvider locale="en" messages={messages_en}>
-            <Provider store={createStore(reducers, applyMiddleware(thunk))}>
+    <Provider store={createStore(reducers, applyMiddleware(thunk))}>
+        <MuiThemeProvider theme={Theme}>
+            <IntlProvider locale="en" messages={messages_en}>
                 <App/>
-            </Provider>
-        </IntlProvider>
-    </MuiThemeProvider>,
-
+            </IntlProvider>
+        </MuiThemeProvider>
+    </Provider>,
     document.querySelector("#root")
 );
