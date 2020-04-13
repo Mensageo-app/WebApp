@@ -9,7 +9,7 @@ import thunk from 'redux-thunk'
 import { IntlProvider } from 'react-intl'
 
 import { MuiThemeProvider } from '@material-ui/core/styles'
-import Theme from './components/Theme'
+import Theme from './style/Theme'
 
 // import messagesEs from "./translations/es.json"; // use this to change to spanish
 import messagesEn from './translations/en.json'
