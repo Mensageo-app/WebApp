@@ -60,3 +60,7 @@ Clone https://github.com/Mensageo-app/mock_api_server, run `npm install` and `np
 
 8: Visit http://localhost:31000 to see the application
 
+### EsLint
+The style lint is added to the git hooks and it runs with every commit.
+To auto fix complains you can run `npx eslint --fix your_file`.
+More info can be found here: https://eslint.org/ 
