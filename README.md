@@ -44,7 +44,7 @@ You can find more options and information: https://github.com/formatjs/react-int
 Clone https://github.com/Mensageo-app/mock_api_server, run `npm install` and `npm start` to have a json server serving mock data for mensageo app.
 
 ### Docker
-1: Make sure your Docker engine with Kubernetes support is enabled
+1: Make sure your Docker engine with Kubernetes support is enabled (check the kubernetes tab in the docker-desktop settings)
 
 2: Build the React app with `npm run-script build`
 
