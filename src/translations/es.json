@@ -1,4 +1,17 @@
 {
-  "app.text": "Hola",
-  "category.card.locate": "Locate"
+	"app.text": "Hola",
+	"category.card.locate": "Localizar",
+	"information.left.visualize": "* Visualiza y encuentra las necesidades actuales de los centros sanitarios. Comienza a ayudar hoy!",
+	"information.left.learn": "* Aprende sobre las especificaciones. No más rechazos por material no válido.",
+	"information.left.deal": "* Trata directamente con el usuario final. Sin intermediarios ni comisiones.",
+	"information.left.title": "Makers",
+	"information.left.button": "NAVEGA POR LAS NECESIDADES",
+	"information.right.visualize": "* Visualiza y encuentra las necesidades actuales de los centros sanitarios. Comienza a ayudar hoy!",
+	"information.right.learn": "* Aprende sobre las especificaciones. No más rechazos por material no válido.",
+	"information.right.deal": "* Trata directamente con el usuario final. Sin intermediarios ni comisiones.",
+	"information.right.title": "Profesionales de la salud",
+	"information.right.button": "INDICA TUS NECESIDADES",
+	"header.title": "Conectamos organizaciones sanitarias con creadores de equipaciones críticas.",
+	"need.update.title": "Hay necesidad de...",
+	"need.update.last": "Última actualización: "
 }
