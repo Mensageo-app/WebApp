@@ -44,7 +44,7 @@ You can find more options and information: https://github.com/formatjs/react-int
 Clone https://github.com/Mensageo-app/mock_api_server, run `npm install` and `npm start` to have a json server serving mock data for mensageo app.
 
 ### Docker
-1: Make sure your Docker engine with Kubernetes support is enabled
+1: Make sure your Docker engine with Kubernetes support is enabled (check the kubernetes tab in the docker-desktop settings)
 
 2: Build the React app with `npm run-script build`
 
@@ -60,3 +60,7 @@ Clone https://github.com/Mensageo-app/mock_api_server, run `npm install` and `np
 
 8: Visit http://localhost:31000 to see the application
 
+### EsLint
+The style lint is added to the git hooks and it runs with every commit.
+To auto fix complains you can run `npx eslint --fix your_file`.
+More info can be found here: https://eslint.org/ 
