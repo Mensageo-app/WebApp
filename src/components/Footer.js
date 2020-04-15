@@ -1,36 +1,36 @@
-import React from 'react'
-import Typography from '@material-ui/core/Typography'
-import { makeStyles } from '@material-ui/core/styles'
-import Link from '@material-ui/core/Link'
-
-const useStyles = makeStyles((theme) => ({
-  footer: {
-    padding: theme.spacing(6)
-  }
-}))
-
-function Copyright () {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-                Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  )
-}
+import React from "react";
+import Typography from "@material-ui/core/Typography";
+import Link from "@material-ui/core/Link";
+import List from "@material-ui/core/Link";
+import { ListItemText } from "@material-ui/core";
+import { Divider } from "@material-ui/core";
+import { useStyles } from "../style/FooterStyle";
 
 const Footer = () => {
-  const classes = useStyles()
+  const classes = useStyles();
 
-  return <footer className={classes.footer}>
-    <Typography variant="h6" align="center" gutterBottom>
-            Footer
-    </Typography>
-    <Copyright/>
-  </footer>
-}
+  function FooterListElement(props) {
+    return (
+      <ListItemText>
+        <Typography variant="h6">
+          <Link color="textPrimary" href={props.href}>
+            {props.text}
+          </Link>
+        </Typography>
+      </ListItemText>
+    );
+  }
 
-export default Footer
+  return (
+    <footer className={classes.footer}>
+      <Divider className={classes.dividerStyle} />
+      <List className={classes.footerListStyle}>
+        <FooterListElement text="Feedback" href="/Feedback" />
+        <FooterListElement text="About us" href="/Aboutus" />
+        <FooterListElement text="Join Us" href="/Joinus" />
+      </List>
+    </footer>
+  );
+};
+
+export default Footer;
