@@ -53,6 +53,7 @@
   },
   "husky": {
     "hooks": {
+      "pre-commit": "npx eslint .",
       "pre-commit": "npm test -- --watchAll=false"
     }
   }
