@@ -1,15 +1,15 @@
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core/styles'
 
 export const useStyles = makeStyles((theme) => ({
   footerListStyle: {
-    display: "flex",
-    flexDirection: "row",
-    padding: 0,
+    display: 'flex',
+    flexDirection: 'row',
+    padding: 0
   },
   footer: {
-    padding: theme.spacing(6),
+    padding: theme.spacing(6)
   },
   dividerStyle: {
-    borderTop: "2px solid #2196F3",
-  },
-}));
+    borderTop: '2px solid #2196F3'
+  }
+}))
