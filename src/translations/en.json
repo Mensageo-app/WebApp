@@ -13,5 +13,8 @@
   "information.right.button": "LIST YOUR NEEDS",
   "header.title": "We connect health organizations with makers of critical equipment.",
   "need.update.title": "There’s a need for...",
-  "need.update.last": "Last Updated: "
+  "need.update.last": "Last Updated: ",
+  "footer.feedback": "Feedback",
+  "footer.joinus": "Join us",
+  "footer.aboutus": "About us"
 }

@@ -1,36 +1,36 @@
 import React from 'react'
 import Typography from '@material-ui/core/Typography'
-import { makeStyles } from '@material-ui/core/styles'
 import Link from '@material-ui/core/Link'
-
-const useStyles = makeStyles((theme) => ({
-  footer: {
-    padding: theme.spacing(6)
-  }
-}))
-
-function Copyright () {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-                Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  )
-}
+import List from '@material-ui/core/List'
+import { ListItemText, Divider } from '@material-ui/core'
+import { useStyles } from '../style/FooterStyle'
+import { FormattedMessage } from 'react-intl'
 
 const Footer = () => {
   const classes = useStyles()
 
-  return <footer className={classes.footer}>
-    <Typography variant="h6" align="center" gutterBottom>
-            Footer
-    </Typography>
-    <Copyright/>
-  </footer>
+  function FooterListElement (props) {
+    return (
+      <ListItemText className={classes.footerListItemStyle}>
+        <Typography variant="h6" align="left">
+          <Link color="textPrimary" href={props.href}>
+            <FormattedMessage id={props.idMessage} defaultMessage="Missing String" />
+          </Link>
+        </Typography>
+      </ListItemText>
+    )
+  }
+
+  return (
+    <footer className={classes.footer}>
+      <Divider className={classes.dividerStyle} />
+      <List className={classes.footerListStyle}>
+        <FooterListElement idMessage="footer.feedback" href="/Feedback" />
+        <FooterListElement idMessage="footer.aboutus" href="/Aboutus" />
+        <FooterListElement idMessage="footer.joinus" href="/Joinus" />
+      </List>
+    </footer>
+  )
 }
 
 export default Footer
