@@ -7,15 +7,16 @@ import Typography from '@material-ui/core/Typography'
 import { FormattedMessage } from 'react-intl'
 import Grid from '@material-ui/core/Grid'
 import { useStyles } from '../../style/CategoryStyle'
+import CardMedia from "@material-ui/core/CardMedia";
 
 const CategoryCard = ({ category }) => {
-  const classes = useStyles()
+  const classes = useStyles();
 
   return (
     <Grid item key={category.id} xs={6} sm={3} md={2}>
       <Card className={classes.card}>
         <CardContent className={classes.cardContent} align="center">
-          {/* <CardMedia className={classes.cardMedia} image="/logo192.png"/> */}
+          <CardMedia className={classes.cardMedia} image={`/icons/${category.icon}.svg`}/>
           <Typography variant="h5" align="center">
             {category.quantity}
           </Typography>
@@ -31,6 +32,6 @@ const CategoryCard = ({ category }) => {
       </CardActions>
     </Grid>
   )
-}
+};
 
 export default CategoryCard
