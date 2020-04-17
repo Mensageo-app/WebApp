@@ -7,10 +7,10 @@ import Typography from '@material-ui/core/Typography'
 import { FormattedMessage } from 'react-intl'
 import Grid from '@material-ui/core/Grid'
 import { useStyles } from '../../style/CategoryStyle'
-import CardMedia from "@material-ui/core/CardMedia";
+import CardMedia from '@material-ui/core/CardMedia'
 
 const CategoryCard = ({ category }) => {
-  const classes = useStyles();
+  const classes = useStyles()
 
   return (
     <Grid item key={category.id} xs={6} sm={3} md={2}>
@@ -32,6 +32,6 @@ const CategoryCard = ({ category }) => {
       </CardActions>
     </Grid>
   )
-};
+}
 
 export default CategoryCard

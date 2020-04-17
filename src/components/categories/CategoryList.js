@@ -4,6 +4,8 @@ import { fetchCategories } from '../../actions'
 import CategoryCard from './CategoryCard'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
+import CircularProgress from '@material-ui/core/CircularProgress'
+import Typography from '@material-ui/core/Typography'
 
 class CategoryList extends React.Component {
   componentDidMount () {
@@ -25,7 +27,9 @@ class CategoryList extends React.Component {
     if (categories && categories.length > 0) {
       return this.renderContainer(categories)
     } else {
-      return <div>Loading ...</div>
+      return <div><Typography variant="h4" align="center">
+        <CircularProgress /> Loading ...
+      </Typography></div>
     }
   }
 
