@@ -13,9 +13,15 @@ export const useStyles = makeStyles((theme) => ({
     borderRadius: '4px'
   },
   cardMedia: {
-    paddingTop: '56.25%' // 16:9
+    paddingTop: '56.25%', // 16:9
+    padding: '15%',
+    backgroundSize: 'contain !important',    
+    margin: '0 auto'
   },
   cardContent: {
-    flexGrow: 1
+    flexGrow: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-evenly'
   }
 }))
