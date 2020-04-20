@@ -6,6 +6,7 @@ import { Router, Switch, Route } from 'react-router-dom'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import BrandToolBar from './BrandToolBar'
 import Footer from './Footer'
+import CategoryShow from './categories/CategoryShow'
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
               <div>
                 <Switch>
                   <Route path="/" exact component={Home}/>
+                  <Route path="/categories/:id" exact component={CategoryShow}/>
                 </Switch>
               </div>
             </Router>

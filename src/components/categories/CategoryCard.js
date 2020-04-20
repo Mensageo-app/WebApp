@@ -26,7 +26,7 @@ const CategoryCard = ({ category }) => {
         </CardContent>
       </Card>
       <CardActions>
-        <Button color="primary" variant="contained" fullWidth size="small">
+        <Button color="primary" variant="contained" fullWidth size="small" href={`/categories/${category.id}`}>
           <FormattedMessage id="category.card.locate"/>
         </Button>
       </CardActions>
