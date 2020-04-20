@@ -16,5 +16,6 @@
   "need.update.last": "Last Updated: ",
   "footer.feedback": "Feedback",
   "footer.joinus": "Join us",
-  "footer.aboutus": "About us"
+  "footer.aboutus": "About us",
+  "loader.text": "Loading ..."
 }
