@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { fetchCategory } from '../../actions'
 import Loader from '../Loader'
+import Product from '../Product'
 
 class CategoryShow extends React.Component {
   componentDidMount () {
@@ -14,9 +15,7 @@ class CategoryShow extends React.Component {
     }
 
     return (
-      <div>
-Here the Hospitals
-      </div>
+      <Product/>
     )
   }
 };
