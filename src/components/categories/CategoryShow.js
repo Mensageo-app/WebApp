@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchCategory } from '../../actions'
+import Loader from '../Loader'
 
 class CategoryShow extends React.Component {
   componentDidMount () {
@@ -9,7 +10,7 @@ class CategoryShow extends React.Component {
 
   render () {
     if (!this.props.category) {
-      return <div>Loading...</div>
+      return <Loader />
     }
 
     return (
