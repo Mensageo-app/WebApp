@@ -23,5 +23,20 @@ export const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-evenly'
+  },
+  typography: {
+    // fontFamily: "Roboto",
+    fontStyle: 'normal',
+    fontWeight: 500,
+    letterSpacing: '1.25px',
+    h8: {
+      fontWeight: 'fontWeightBold'
+    },
+    h6: {
+      color: '#2196F3'
+    },
+    h9: {
+      color: '#808080'
+    }
   }
 }))

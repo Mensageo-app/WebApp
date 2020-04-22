@@ -1,11 +1,11 @@
 import React from 'react'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
-import { useStyles } from '../style/ProductStyle'
+import { useStyles } from '../../style/ProductStyle'
 import CardMedia from '@material-ui/core/CardMedia'
 import Box from '@material-ui/core/Box'
 
-const Product = () => {
+const ProductDetails = () => {
   const classes = useStyles()
 
   return (
@@ -28,4 +28,4 @@ const Product = () => {
   )
 }
 
-export default Product
+export default ProductDetails
