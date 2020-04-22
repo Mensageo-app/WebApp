@@ -5,12 +5,12 @@ import Box from '@material-ui/core/Box'
 
 const NeedUpdates = () => {
   return (
-    <Box component="p" m={6}>
+    <Box component="div" m={6}>
       <Typography variant="h4" align="center">
-        <FormattedMessage id="need.update.title"/>
+        <FormattedMessage id="need.update.title" />
       </Typography>
       <Typography variant="body1" align="center">
-        <FormattedMessage id="need.update.last"/>
+        <FormattedMessage id="need.update.last" />
         {new Date().toLocaleString()}
       </Typography>
     </Box>
