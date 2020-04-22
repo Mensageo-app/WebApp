@@ -12,23 +12,23 @@ const Information = ({ position }) => {
       <Card>
         <CardContent>
           <Typography variant="h6" align="left">
-            <FormattedMessage id={`information.${position}.title`}/>
+            <FormattedMessage id={`information.${position}.title`} defaultMessage="Missing String" />
           </Typography>
           <div>
             <p>
-              <FormattedMessage id={`information.${position}.visualize`}/>
+              <FormattedMessage id={`information.${position}.visualize`} defaultMessage="Missing String" />
             </p>
             <p>
-              <FormattedMessage id={`information.${position}.learn`}/>
+              <FormattedMessage id={`information.${position}.learn`} defaultMessage="Missing String" />
             </p>
             <p>
-              <FormattedMessage id={`information.${position}.deal`}/>
+              <FormattedMessage id={`information.${position}.deal`} defaultMessage="Missing String" />
             </p>
           </div>
         </CardContent>
         <CardActions>
           <Button color="primary" variant="contained" size="small">
-            <FormattedMessage id={`information.${position}.button`} defaultMessage="Locate"/>
+            <FormattedMessage id={`information.${position}.button`} defaultMessage="Locate" />
           </Button>
         </CardActions>
       </Card>
