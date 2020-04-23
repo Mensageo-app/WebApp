@@ -3,7 +3,7 @@ import Typography from '@material-ui/core/Typography'
 
 const FeedBack = () => {
   return <Typography variant="h5">
-        FeedBack Component
+        Please send an e-mail with your feedback to xxx@mensageo.com. Thanks!
   </Typography>
 }
 
