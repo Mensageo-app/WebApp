@@ -13,16 +13,16 @@ const Header = () => {
       <Container>
         <div className={classes.heroTitle}>
           <Typography variant="h3" align="left" gutterBottom>
-            <FormattedMessage id="header.title"/>
+            <FormattedMessage id="header.title" defaultMessage="Missing String for header.title" />
           </Typography>
         </div>
         <div className={classes.heroButtons}>
           <Grid container spacing={2} justify="center">
             <Grid item md={6}>
-              <Information position={'left'}/>
+              <Information position={'left'} />
             </Grid>
             <Grid item md={6}>
-              <Information position={'right'}/>
+              <Information position={'right'} />
             </Grid>
           </Grid>
         </div>

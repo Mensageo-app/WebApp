@@ -15,7 +15,7 @@ export const useStyles = makeStyles((theme) => ({
   cardMedia: {
     paddingTop: '56.25%', // 16:9
     padding: '15%',
-    backgroundSize: 'contain !important',    
+    backgroundSize: 'contain !important',
     margin: '0 auto'
   },
   cardContent: {
