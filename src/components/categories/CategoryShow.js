@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { fetchCategory } from '../../actions'
 import Loader from '../Loader'
+import Product from '../product/ProductDetails'
+import HospitalList from '../product/HospitalList'
 
 class CategoryShow extends React.Component {
   componentDidMount () {
@@ -14,9 +16,11 @@ class CategoryShow extends React.Component {
     }
 
     return (
-      <div>
-Here the Hospitals
-      </div>
+      <React.Fragment>
+        <Product/>
+        <HospitalList/>
+      </React.Fragment>
+
     )
   }
 };
