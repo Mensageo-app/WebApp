@@ -25,9 +25,9 @@ const Footer = () => {
     <footer className={classes.footer}>
       <Divider className={classes.dividerStyle} />
       <List className={classes.footerListStyle}>
-        <FooterListElement idMessage="footer.feedback" href="/Feedback" />
-        <FooterListElement idMessage="footer.aboutus" href="/Aboutus" />
-        <FooterListElement idMessage="footer.joinus" href="/Joinus" />
+        <FooterListElement idMessage="footer.feedback" href="/feedback" />
+        <FooterListElement idMessage="footer.aboutus" href="/aboutus" />
+        <FooterListElement idMessage="footer.joinus" href="/joinus" />
       </List>
     </footer>
   )
