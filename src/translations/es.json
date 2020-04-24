@@ -17,5 +17,12 @@
 	"footer.feedback.": "Feedback",
 	"footer.joinus.": "Únete",
 	"footer.aboutus.": "Acerca de",
-	"loader.text": "Cargando ..."
+	"loader.text": "Cargando ...",
+  	"aboutus.aboutus": "Sobre nosotros",
+  	"aboutus.vision.title": "Nuestra visión",
+  	"aboutus.vision.content": "Mensageo es una plataforma para hospitales y residencias, quienes sufran de carencias de material médico y no tengan una forma estable de comunicar sus necesidades a aquellos grupos que podrían suplirlas. Nuestra plataforma pone en contacto a individuos y organizaciones dispuestas a hacer donativos con aquellos servicios sanitarios que los necesitan.",
+  	"aboutus.whoarewe.title": "¿Quienes somos?",
+  	"aboutus.whoarewe.content": "Somos un grupo de personas con diferentes perfiles profesionales tratando de contribuir a que los centros médicos y residencias a lo largo del mundo tengan acceso al material necesario para proteger a su personal.",
+  	"aboutus.contactus.title": "¡Contacta con nosotros!",
+  	"aboutus.contactus.content": "En caso de que tengas alguna sugerencia o pregunta, no dudes en ponerte en contacto con nosotros en el email xxx@mensageo.com y te responderémos lo antes posible. ¡Gracias!"
 }
