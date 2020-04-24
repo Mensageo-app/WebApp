@@ -1,34 +1,20 @@
 {
   "name": "WebApp",
   "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@material-ui/core": "^4.9.9",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "axios": "^0.19.2",
-    "lodash": "^4.17.15",
-    "node-sass": "^4.13.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-intl": "^4.3.1",
-    "react-redux": "^7.2.0",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1",
-    "redux": "^4.0.5",
-    "redux-mock-store": "^1.5.4",
-    "redux-thunk": "^2.3.0"
-  },
+  "description": "",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "parcel public/index.html -p 3000",
+    "build": "parcel build public/index.html",
+    "test": "jest --watchAll=false",
+    "dev": "jest --watchAll=true",
     "precommit": ".git/hooks/pre-commit"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "staticFiles": {
+    "staticPath": "public",
+    "watcherGlob": "**"
   },
   "browserslist": {
     "production": [
@@ -42,7 +28,39 @@
       "last 1 safari version"
     ]
   },
+  "license": "MIT",
+  "dependencies": {
+    "@material-ui/core": "^4.9.11",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/react": "^16.9.34",
+    "axios": "^0.19.2",
+    "lodash": "^4.17.15",
+    "node-sass": "^4.13.1",
+    "parcel-plugin-static-files-copy": "^2.3.1",
+    "react": "^16.13.1",
+    "react-chartjs-2": "^2.7.6",
+    "react-dom": "^16.13.1",
+    "react-intl": "^4.3.1",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.1",
+    "redux": "^4.0.5",
+    "redux-mock-store": "^1.5.4",
+    "redux-thunk": "^2.3.0"
+  },
   "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
+    "@babel/runtime": "^7.6.3",
+    "babel-jest": "^25.4.0",
+    "babel-preset-nano-react-app": "^0.1.0",
+    "cssnano": "^4.1.10",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.20.2",
@@ -50,11 +68,34 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-standard": "^4.0.1",
-    "husky": "^4.2.3"
+    "husky": "^4.2.5",
+    "jest": "^25.4.0",
+    "parcel-bundler": "^1.11.0",
+    "parcel-plugin-clean-dist": "0.0.6",
+    "react-test-renderer": "^16.13.1"
+  },
+  "babel": {
+    "presets": [
+      "nano-react-app"
+    ],
+    "plugins": [
+      [
+        "@babel/plugin-proposal-class-properties",
+        {
+          "loose": true
+        }
+      ],
+      [
+        "@babel/plugin-transform-react-jsx",
+        {
+          "pragmaFrag": "React.Fragment"
+        }
+      ]
+    ]
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npx eslint . && npm test -- --watchAll=false"
+      "pre-commit": "npx eslint ./src && npm test -- --watchAll=false"
     }
   }
 }
