@@ -11,7 +11,7 @@ jobs:
           steps:
             - run: npm install
             - run: npm test -- --watchAll=false
-            - run: npx eslint . 
+            - run: npx eslint ./src
 workflows:
     build-and-test:
       jobs:
