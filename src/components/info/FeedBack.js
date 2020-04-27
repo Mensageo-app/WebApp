@@ -1,11 +1,11 @@
 import React from 'react'
 import FullWidthInfoCard from './FullWidthInfoCard'
-import InfoTemplate from './InfoTemplate'
+import InfoModalTemplate from './InfoModalTemplate'
 
-const FeedBack = () => {
-  return <InfoTemplate title="feedback.title" >
+const Feedback = (props) => {
+  return <InfoModalTemplate open={props.open} handleClose={props.handleClose}>
     <FullWidthInfoCard title="feedback.title" content="feedback.content" />
-  </InfoTemplate>
+  </InfoModalTemplate>
 }
 
-export default FeedBack
+export default Feedback

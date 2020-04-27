@@ -1,11 +1,11 @@
 import React from 'react'
 import FullWidthInfoCard from './FullWidthInfoCard'
-import InfoTemplate from './InfoTemplate'
+import InfoModalTemplate from './InfoModalTemplate'
 
-const JoinUs = () => {
-  return <InfoTemplate title="joinus.title" >
+const JoinUs = (props) => {
+  return <InfoModalTemplate open={props.open} handleClose={props.handleClose}>
     <FullWidthInfoCard title="joinus.title" content="joinus.content" />
-  </InfoTemplate>
+  </InfoModalTemplate>
 }
 
 export default JoinUs
