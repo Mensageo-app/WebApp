@@ -8,7 +8,7 @@ import BrandToolBar from './BrandToolBar'
 import Footer from './Footer'
 import CategoryShow from './categories/CategoryShow'
 import AboutUs from './info/AboutUs'
-import FeedBack from './info/FeedBack'
+import FeedBack from './info/Feedback'
 import JoinUs from './info/JoinUs'
 
 const App = () => {
