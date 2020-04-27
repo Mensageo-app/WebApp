@@ -24,5 +24,10 @@
   	"aboutus.whoarewe.title": "¿Quienes somos?",
   	"aboutus.whoarewe.content": "Somos un grupo de personas con diferentes perfiles profesionales tratando de contribuir a que los centros médicos y residencias a lo largo del mundo tengan acceso al material necesario para proteger a su personal.",
   	"aboutus.contactus.title": "¡Contacta con nosotros!",
-  	"aboutus.contactus.content": "En caso de que tengas alguna sugerencia o pregunta, no dudes en ponerte en contacto con nosotros en el email xxx@mensageo.com y te responderémos lo antes posible. ¡Gracias!"
+	"aboutus.contactus.content": "En caso de que tengas alguna sugerencia o pregunta, no dudes en ponerte en contacto con nosotros en el email mensageocov@gmail.com y te responderémos lo antes posible. ¡Gracias!",
+	"joinus.title": "Únete",
+	"joinus.content": "Envía un mail con tu información de contacto a mensageocov@gmail.com y te responderemos lo antes posible. Gracias!",
+	"feedback.title": "Feedback",
+	"feedback.content": "Envía un mail con tu feedback a mensageocov@gmail.com. Gracias!"
+
 }

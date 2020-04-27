@@ -7,9 +7,9 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import BrandToolBar from './BrandToolBar'
 import Footer from './Footer'
 import CategoryShow from './categories/CategoryShow'
-import AboutUs from './AboutUs'
-import FeedBack from './FeedBack'
-import JoinUs from './JoinUs'
+import AboutUs from './info/AboutUs'
+import FeedBack from './info/FeedBack'
+import JoinUs from './info/JoinUs'
 
 const App = () => {
   return (
