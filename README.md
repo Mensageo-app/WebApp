@@ -1,8 +1,6 @@
 ## Prerequisite
 
-Serverless package must be installed to be able to run the project.
-
-            npm install -g serverless
+Serverless package must be installed to be able to run the project. Dependencies serverless is added in package.JSON.
 
 ## Available Scripts
 
