@@ -11,7 +11,7 @@ const HospitalList = () => {
     <Typography variant="h5" align="center">Who needs protective masks</Typography>
     <Grid container spacing={4}>
       {hospitals.map(hospital => {
-        return <HospitalCard hospital ={hospital} key={hospital.name}/>
+        return <HospitalCard hospital ={hospital} key={hospital.name}/> //why we don't put result of map to the variable? Because it returns to HospitalCard?
       })}
     </Grid>
   </Container>
