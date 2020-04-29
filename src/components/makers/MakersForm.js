@@ -10,18 +10,18 @@ const MakersForm = () =>
           <Grid item xs={6}>
             <TextField fullWidth required id ="FullName" type="text" label="Full Name" />
 
-            <TextField fullWidth required id ="Telephone" type="text" label="Telephone" />
+            <TextField fullWidth required id ="Telephone" type="tel" label="Telephone" inputProps={{pattern: "[6,7,8,9][0-9]{8}"}}/>
 
-            <TextField fullWidth required id ="Email" type="text" label="Email" />
+            <TextField fullWidth required id ="Email" type="email" label="Email" />
 
-            <TextField fullWidth required id ="Amount" type="text" label="Amount" />
+            <TextField fullWidth required id ="Amount" type="number" label="Amount" inputProps={{min: 1}} />
           </Grid>
           <Grid item xs={6}>
             <TextField fullWidth id ="Company" type="text" label="Company" />
 
-            <TextField fullWidth id ="AdditionalTelephone" type="text" label="Additional telephone" />
+            <TextField fullWidth id ="AdditionalTelephone" type="tel" label="Additional telephone" inputProps={{pattern: "[6,7,8,9][0-9]{8}"}}/>
 
-            <TextField fullWidth id ="AdditionalEmail" type="text" label="Additional email" />
+            <TextField fullWidth id ="AdditionalEmail" type="email" label="Additional email" />
           </Grid>
           <Grid item xs={12}>
             <TextField fullWidth required id ="DonationInfo" type="text" label="Information about the donation" multiline rowsMax={5}/>
