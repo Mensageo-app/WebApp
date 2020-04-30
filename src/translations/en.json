@@ -20,9 +20,14 @@
   "loader.text": "Loading ...",
   "aboutus.aboutus": "About Us",
   "aboutus.vision.title": "Our Vision",
-  "aboutus.vision.content": "Mensageo is a platform for hospitals and elderly centers, who have a shortage of medical supplies and don&apos;t have a reliable way to communicate these needs to the people who can provide them. Our platform will connect individuals and organizations that want to make donations with the hospitals and elderly centers in need.",
+  "aboutus.vision.content": "Mensageo is a platform for hospitals and elderly centers, who have a shortage of medical supplies and don't have a reliable way to communicate these needs to the people who can provide them. Our platform will connect individuals and organizations that want to make donations with the hospitals and elderly centers in need.",
   "aboutus.whoarewe.title": "Who are we?",
   "aboutus.whoarewe.content": "We are a group of people with diverse backgrounds seeking to contribute with hospitals and Elderly centers around the world to get the protective ersonal equipment they need.",
   "aboutus.contactus.title": "Contact us!",
-  "aboutus.contactus.content": "If you have any questions or suggestions please send us an email to xxx@mensageo.com and we will get back to you as soon as possible. Thanks!"
+  "aboutus.contactus.content": "If you have any questions or suggestions please send us an email to mensageocov@gmail.com and we will get back to you as soon as possible. Thanks!",
+  "joinus.title": "Join Us",
+  "joinus.content": "Please send an e-mail with your contact information to mensageocov@gmail.com and we will get back to you as soon as possible. Thanks!",
+  "feedback.title": "Feedback",
+  "feedback.content": "Please send an e-mail with your feedback to mensageocov@gmail.com. Thanks!",
+  "dialog.close": "Close"
 }
