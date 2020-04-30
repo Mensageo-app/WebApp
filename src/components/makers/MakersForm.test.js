@@ -4,23 +4,22 @@ import '@testing-library/jest-dom/extend-expect'
 import { render, fireEvent, wait } from '@testing-library/react'
 import MakersForm from './MakersForm'
 
-describe("<MakersForm open=false/>", ()=>{
-    it('Should not render component', () => {
-        const { queryByText } = render(<MakersForm open={false} ></MakersForm>)
-        expect(queryByText('Submit')).toBeFalsy()
-      })
+describe('<MakersForm open=false/>', () => {
+  it('Should not render component', () => {
+    const { queryByText } = render(<MakersForm open={false} ></MakersForm>)
+    expect(queryByText('Submit')).toBeFalsy()
+  })
 })
 
 describe('<MakersForm open=true />', () => {
-    let component
-    beforeEach(()=>{
-        component = render(<MakersForm open={true} ></MakersForm>)
-    })
+  let component
+  beforeEach(() => {
+    component = render(<MakersForm open={true} ></MakersForm>)
+  })
   describe('Structural tests', () => {
     it('Renders component', () => {
       expect(component.getByText('Submit')).toBeTruthy()
     })
-
 
     it.each`
             label    
