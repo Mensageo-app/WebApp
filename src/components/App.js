@@ -10,6 +10,7 @@ import CategoryShow from './categories/CategoryShow'
 import AboutUs from './info/AboutUs'
 import FeedBack from './info/Feedback'
 import JoinUs from './info/JoinUs'
+import MakersForm from './makers/MakersForm'
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
                 <Switch>
                   <Route path="/" exact component={Home} />
                   <Route path="/categories/:id" exact component={CategoryShow} />
+                  <Route path="/contact/:id" exact component={MakersForm} />
                   <Route path="/aboutus" exact component={AboutUs} />
                   <Route path="/feedback" exact component={FeedBack} />
                   <Route path="/joinus" exact component={JoinUs} />

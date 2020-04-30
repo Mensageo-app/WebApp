@@ -21,7 +21,7 @@ const HospitalCard = ({ hospital }) => {
               {hospital.name}
             </Typography> </Box>
           <HospitalNeedList needs = {hospital.needs}/>
-          <Link href={'#'}>Contact</Link>
+          <Link href={`/contact/${hospital.id}`}>Contact</Link>
         </CardContent>
       </Card>
     </Grid>
