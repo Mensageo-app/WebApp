@@ -7,7 +7,7 @@ import HospitalCard from './HospitalCard'
 describe('<HospitalCard />', () => {
   let hospitalCard
   beforeEach(() => {
-    const hospital = { name: 'Hospital Name' }
+    const hospital = { name: 'Hospital Name', needs: [{ quantity: 50, productsName: 'Mask' }] }
     hospitalCard = render(<HospitalCard hospital ={hospital} key={hospital.name}/>)
   })
 

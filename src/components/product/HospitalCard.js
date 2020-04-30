@@ -24,7 +24,9 @@ const HospitalCard = ({ hospital }) => {
 
   return (
     <>
-      <MakersForm open={showDialog} onClose={handleDialogClosing}/>
+      <MakersForm open={showDialog} onClose={handleDialogClosing}
+        hospitalName={hospital.name}
+        product={hospital.needs[0].productsName}/>
       <Grid item key={hospital.name} xs={6} sm={3} md={3} lg={3} xl={3}>
         <Card className={classes.card} >
           <CardContent className={classes.cardContent} align="left">

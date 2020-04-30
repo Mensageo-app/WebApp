@@ -6,7 +6,19 @@ import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
 
 const HospitalList = () => {
-  const hospitals = [{ name: 'Hospital Clinic', needs: [{ quantity: 50, productsName: 'Mask' }, { quantity: 150, productsName: 'Super Mask' }] }, { name: 'Hospital del Mar', needs: [{ quantity: 100, productsName: 'Mask' }] }, { name: 'Clinica Sabadell' }]
+  const hospitals = [{
+    name: 'Hospital Clinic',
+    needs: [{ quantity: 50, productsName: 'Mask' },
+      { quantity: 150, productsName: 'Super Mask' }]
+  },
+  {
+    name: 'Hospital del Mar',
+    needs: [{ quantity: 100, productsName: 'Mask' }]
+  },
+  {
+    name: 'Clinica Sabadell',
+    needs: [{ quantity: 100, productsName: 'Mask' }]
+  }]
 
   return <Container maxWidth="lg">
     <Box m="1rem">
