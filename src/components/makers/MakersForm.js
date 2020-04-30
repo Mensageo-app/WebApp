@@ -2,8 +2,8 @@ import React from 'react'
 import Button from '@material-ui/core/Button'
 import { Paper, Grid, TextField, DialogTitle, Dialog, DialogContent, DialogContentText } from '@material-ui/core'
 
-const MakersForm = ({ open }) =>
-  <Dialog open={open}>
+const MakersForm = ({ open, onClose }) =>
+  <Dialog open={open} onClose={onClose}>
     <DialogTitle></DialogTitle>
     <DialogContent>
       <DialogContentText></DialogContentText>
