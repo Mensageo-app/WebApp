@@ -12,7 +12,6 @@ import FeedBack from './info/Feedback'
 import JoinUs from './info/JoinUs'
 import MakersForm from './makers/MakersForm'
 
-
 const App = () => {
   return (
     <div>
