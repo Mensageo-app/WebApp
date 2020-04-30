@@ -13,8 +13,11 @@ describe('<MakersForm open=false/>', () => {
 
 describe('<MakersForm open=true />', () => {
   let component
+  const hospitalName = 'The Hospital'
+  const productName = 'Blue Thingies'
+
   beforeEach(() => {
-    component = render(<MakersForm open={true} ></MakersForm>)
+    component = render(<MakersForm open={true} hospitalName={hospitalName} product={productName}></MakersForm>)
   })
   describe('Structural tests', () => {
     it('Renders component', () => {
@@ -33,6 +36,11 @@ describe('<MakersForm open=true />', () => {
             ${'Additional email'}
              `('should have "$label" entry', ({ label }) => {
       expect(component.getByLabelText(label)).toBeTruthy()
+    })
+
+    it('should show the hospital and product in the heading', () => {
+      expect(component.getByText((content, element) => content.includes(productName))).toBeTruthy()
+      expect(component.getByText((content, element) => content.includes(hospitalName))).toBeTruthy()
     })
   })
   describe('Form validation', () => {

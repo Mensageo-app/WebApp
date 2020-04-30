@@ -2,11 +2,19 @@ import React from 'react'
 import Button from '@material-ui/core/Button'
 import { Paper, Grid, TextField, DialogTitle, Dialog, DialogContent, DialogContentText } from '@material-ui/core'
 
-const MakersForm = ({ open }) =>
-  <Dialog open={open}>
+const MakersForm = ({ open, onClose, hospitalName, product }) =>
+  <Dialog open={open} onClose={onClose}>
     <DialogTitle></DialogTitle>
     <DialogContent>
-      <DialogContentText></DialogContentText>
+      <DialogContentText>
+        Thank you for contacting hospital {hospitalName} in order to donate {product}
+        <br />
+        <br />
+        In order for the hospital to be able to evaluate if your donation can be accepted or not,
+        we kindly request you to include all the relevant information to this end, including if you
+        hold any kind of certification or if you are using a model that has already
+        been certified
+      </DialogContentText>
       <form>
         <Paper style={{ padding: 45 }} elevation={0} >
           <Grid container alignItems="flex-start" spacing={2}>
