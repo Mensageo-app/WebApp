@@ -11,16 +11,17 @@ class CategoryShow extends React.Component {
   }
 
   render () {
-    if (!this.props.category) {
+    const { category } = this.props
+
+    if (!category) {
       return <Loader />
     }
 
     return (
       <React.Fragment>
-        <Product/>
-        <HospitalList/>
+        <Product product={category}/>
+        <HospitalList productId={this.props.match.params.id}/>
       </React.Fragment>
-
     )
   }
 };
