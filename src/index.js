@@ -15,7 +15,7 @@ import Theme from './style/Theme'
 // import messagesEs from "./translations/es.json"; // use this to change to spanish
 import messagesEn from './translations/en.json'
 
-const logger = createLogger();
+const logger = createLogger()
 
 ReactDOM.render(
   <Provider store={createStore(reducers, applyMiddleware(thunk, logger))}>
