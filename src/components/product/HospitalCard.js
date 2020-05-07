@@ -26,7 +26,7 @@ const HospitalCard = ({ hospital }) => {
     <>
       <MakersForm open={showDialog} onClose={handleDialogClosing}
         hospitalName={hospital.name}
-        product={hospital.needs[0].productsName}/>
+        product={"Mask"}/>
       <Grid item key={hospital.name} xs={6} sm={3} md={3} lg={3} xl={3}>
         <Card className={classes.card} >
           <CardContent className={classes.cardContent} align="left">
@@ -34,7 +34,9 @@ const HospitalCard = ({ hospital }) => {
               <Typography variant="h8" align="left">
                 {hospital.name}
               </Typography> </Box>
-            <HospitalNeedList needs = {hospital.needs}/>
+            {/*
+              <HospitalNeedList needs = {hospital.needs}/>
+            */}
             <Link onClick={handleContactClicked}>Contact</Link>
           </CardContent>
         </Card>

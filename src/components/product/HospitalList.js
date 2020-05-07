@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchHospitalNeeds } from '../../actions'
+import { fetchHospitals, fetchHospitalNeeds } from '../../actions'
 import HospitalCard from './HospitalCard'
 import Grid from '@material-ui/core/Grid'
 import Container from '@material-ui/core/Container'
@@ -11,8 +11,8 @@ import Loader from '../Loader'
 
 class HospitalList extends React.Component {
   componentDidMount = () => {
-    const { productId } = this.props
-    this.props.fetchHospitalNeeds(productId)
+    this.props.fetchHospitals()
+    this.props.fetchHospitalNeeds()
   }
 
   render = () => {
@@ -26,13 +26,15 @@ class HospitalList extends React.Component {
       </Box>
       <Grid container spacing={4}>
         {hospitals.map(hospital => {
-          return <HospitalCard hospital ={hospital} key={hospital.name}/> // why we don't put result of map to the variable? Because it returns to HospitalCard?
+          return <HospitalCard hospital ={hospital} key={hospital.id}/> // why we don't put result of map to the variable? Because it returns to HospitalCard?
         })}
       </Grid>
     </Container>
   }  
 }
 const mapStateToProps = (state) => {
-  return {hospitals: state.hospitalNeeds ? state.hospitalNeeds : []}
+  return {
+    hospitals: state.hospitals,
+    hospitalNeeds: state.hospitalNeeds ? state.hospitalNeeds : []}
 }
-export default connect(mapStateToProps, {fetchHospitalNeeds})(HospitalList)
+export default connect(mapStateToProps, {fetchHospitals, fetchHospitalNeeds})(HospitalList)
