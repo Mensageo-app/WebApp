@@ -6,7 +6,6 @@ import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import Box from '@material-ui/core/Box'
 import { Link } from '@material-ui/core'
-import HospitalNeedList from './HospitalNeedList'
 import MakersForm from '../makers/MakersForm'
 
 const HospitalCard = ({ hospital }) => {
@@ -26,7 +25,7 @@ const HospitalCard = ({ hospital }) => {
     <>
       <MakersForm open={showDialog} onClose={handleDialogClosing}
         hospitalName={hospital.name}
-        product={"Mask"}/>
+        product={'Mask'}/>
       <Grid item key={hospital.name} xs={6} sm={3} md={3} lg={3} xl={3}>
         <Card className={classes.card} >
           <CardContent className={classes.cardContent} align="left">
