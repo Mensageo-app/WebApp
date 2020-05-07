@@ -12,11 +12,11 @@ export const fetchProduct = (id) => async dispatch => {
 }
 
 export const fetchHospitals = () => async dispatch => {
-  const res = await api.get(`/hospitals`)
-  dispatch({ type: FETCH_HOSPITALS, payload: res.data})
+  const res = await api.get('/hospitals')
+  dispatch({ type: FETCH_HOSPITALS, payload: res.data })
 }
 
 export const fetchHospitalNeeds = () => async dispatch => {
-  const res = await api.get(`/hospital_needs`)
-  dispatch({type: FETCH_HOSPITAL_NEEDS, payload: res.data})
+  const res = await api.get('/hospital_needs')
+  dispatch({ type: FETCH_HOSPITAL_NEEDS, payload: res.data })
 }

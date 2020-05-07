@@ -24,7 +24,7 @@ class ProductList extends React.Component {
   }
 
   renderList () {
-    const {products, hospitalNeeds} = this.props
+    const { products, hospitalNeeds } = this.props
     if (products && products.length > 0) {
       return this.renderContainer(products, hospitalNeeds)
     } else {
@@ -39,8 +39,8 @@ class ProductList extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    products: Object.values(state.products), 
-    hospitalNeeds: state.hospitalNeeds 
+    products: Object.values(state.products),
+    hospitalNeeds: state.hospitalNeeds
   }
 }
 
