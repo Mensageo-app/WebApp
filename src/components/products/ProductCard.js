@@ -9,24 +9,24 @@ import Grid from '@material-ui/core/Grid'
 import { useStyles } from '../../style/CategoryStyle'
 import CardMedia from '@material-ui/core/CardMedia'
 
-const CategoryCard = ({ category }) => {
+const ProductCard = ({ product, quantity }) => {
   const classes = useStyles()
 
   return (
-    <Grid item key={category.id} xs={6} sm={3} md={2}>
+    <Grid item key={product.id} xs={6} sm={3} md={2}>
       <Card className={classes.card}>
         <CardContent className={classes.cardContent} align="center">
-          <CardMedia className={classes.cardMedia} image={`/icons/${category.icon}.svg`} />
+          <CardMedia className={classes.cardMedia} image={`/icons/${product.icon}.svg`} />
           <Typography variant="h5" align="center">
-            {category.quantity}
+            {quantity}
           </Typography>
           <Typography variant="body2" align="center">
-            {category.name}
+            {product.name}
           </Typography>
         </CardContent>
       </Card>
       <CardActions>
-        <Button color="primary" variant="contained" fullWidth size="small" href={`/categories/${category.id}`}>
+        <Button color="primary" variant="contained" fullWidth size="small" href={`/products/${product.id}`}>
           <FormattedMessage id="category.card.locate" />
         </Button>
       </CardActions>
@@ -34,4 +34,4 @@ const CategoryCard = ({ category }) => {
   )
 }
 
-export default CategoryCard
+export default ProductCard

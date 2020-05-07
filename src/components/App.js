@@ -6,7 +6,7 @@ import { Router, Switch, Route } from 'react-router-dom'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import BrandToolBar from './BrandToolBar'
 import Footer from './Footer'
-import CategoryShow from './categories/CategoryShow'
+import ProductShow from './products/ProductShow'
 import AboutUs from './info/AboutUs'
 import FeedBack from './info/Feedback'
 import JoinUs from './info/JoinUs'
@@ -23,7 +23,7 @@ const App = () => {
               <div>
                 <Switch>
                   <Route path="/" exact component={Home} />
-                  <Route path="/categories/:id" exact component={CategoryShow} />
+                  <Route path="/products/:id" exact component={ProductShow} />
                   <Route path="/aboutus" exact component={AboutUs} />
                   <Route path="/feedback" exact component={FeedBack} />
                   <Route path="/joinus" exact component={JoinUs} />

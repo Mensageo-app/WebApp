@@ -1,31 +1,31 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchCategory } from '../../actions'
+import { fetchProduct } from '../../actions'
 import Loader from '../Loader'
 import Product from '../product/ProductDetails'
 import HospitalList from '../product/HospitalList'
 
-class CategoryShow extends React.Component {
+class ProductShow extends React.Component {
   componentDidMount () {
-    this.props.fetchCategory(this.props.match.params.id)
+    this.props.fetchProduct(this.props.match.params.id)
   }
 
   render () {
-    const { category } = this.props
+    const { product } = this.props
 
-    if (!category) {
+    if (!product) {
       return <Loader />
     }
 
     return (
       <React.Fragment>
-        <Product product={category}/>
+        <Product product={product}/>
         <HospitalList productId={this.props.match.params.id}/>
       </React.Fragment>
     )
   }
 };
 const mapStateToProps = (state, ownProps) => {
-  return { category: state.categories[ownProps.match.params.id] }
+  return { product: state.products[ownProps.match.params.id] }
 }
-export default connect(mapStateToProps, { fetchCategory })(CategoryShow)
+export default connect(mapStateToProps, { fetchProduct })(ProductShow)

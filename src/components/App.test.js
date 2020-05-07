@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 import { IntlProvider } from 'react-intl'
 const mockStore = configureMockStore()
 
-jest.mock('./categories/CategoryList', () => () => 'CategoryList')
+jest.mock('./products/ProductList', () => () => 'v')
 
 it('renders without errors', () => {
   const store = mockStore({})

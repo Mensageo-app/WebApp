@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from './Header'
-import CategoryList from './categories/CategoryList'
+import ProductList from './products/ProductList'
 import NeedUpdate from './NeedUpdate'
 
 const Home = () => {
@@ -8,7 +8,7 @@ const Home = () => {
     <React.Fragment>
       <Header/>
       <NeedUpdate/>
-      <CategoryList/>
+      <ProductList/>
     </React.Fragment>
 
   )
