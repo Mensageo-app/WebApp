@@ -22,7 +22,7 @@ const Header = () => {
               <Information position={'left'} />
             </Grid>
             <Grid item md={6}>
-              <Information position={'right'} />              
+              <Information position={'right'} />
             </Grid>
           </Grid>
         </div>

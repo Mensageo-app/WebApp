@@ -20,7 +20,7 @@ class ProductShow extends React.Component {
     return (
       <React.Fragment>
         <Product product={product}/>
-        <HospitalList productId={this.props.match.params.id}/>
+        <HospitalList product={product}/>
       </React.Fragment>
     )
   }

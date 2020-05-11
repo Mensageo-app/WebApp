@@ -7,8 +7,9 @@ import HospitalCard from './HospitalCard'
 describe('<HospitalCard />', () => {
   let hospitalCard
   beforeEach(() => {
-    const hospital = { name: 'Hospital Name', needs: [{ quantity: 50, productsName: 'Mask' }] }
-    hospitalCard = render(<HospitalCard hospital ={hospital} key={hospital.name}/>)
+    const hospital = { id: 1, name: 'Hospital Name' }
+    const product = { id: 1, name: 'Mask' }
+    hospitalCard = render(<HospitalCard hospital ={hospital} product={product} key={hospital.name}/>)
   })
 
   it('Should not show Form Makers dialog', () => {
