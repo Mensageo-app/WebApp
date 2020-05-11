@@ -7,8 +7,9 @@ import Grid from '@material-ui/core/Grid'
 import Box from '@material-ui/core/Box'
 import { Link } from '@material-ui/core'
 import MakersForm from '../makers/MakersForm'
+import HospitalNeed from './HospitalNeed'
 
-const HospitalCard = ({ hospital }) => {
+const HospitalCard = ({ hospital, productName }) => {
   const classes = useStyles()
 
   const [showDialog, setShowDialog] = useState(false)
@@ -25,17 +26,15 @@ const HospitalCard = ({ hospital }) => {
     <>
       <MakersForm open={showDialog} onClose={handleDialogClosing}
         hospitalName={hospital.name}
-        product={'Mask'}/>
+        product={productName}/>
       <Grid item key={hospital.name} xs={6} sm={3} md={3} lg={3} xl={3}>
         <Card className={classes.card} >
           <CardContent className={classes.cardContent} align="left">
             <Box fontWeight="fontWeightBold">
-              <Typography variant="h8" align="left">
+              <Typography align="left">
                 {hospital.name}
               </Typography> </Box>
-            {/*
-              <HospitalNeedList needs = {hospital.needs}/>
-            */}
+            <HospitalNeed need={{ quantity: hospital.quantity, productsName: productName }}/>
             <Link onClick={handleContactClicked}>Contact</Link>
           </CardContent>
         </Card>

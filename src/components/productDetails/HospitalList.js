@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchHospitals, fetchHospitalNeeds } from '../../actions'
+import { calculateProductQuantityPerHospital } from '../../selectors/hospitalNeeds'
 import HospitalCard from './HospitalCard'
 import Grid from '@material-ui/core/Grid'
 import Container from '@material-ui/core/Container'
@@ -14,19 +15,22 @@ class HospitalList extends React.Component {
     this.props.fetchHospitalNeeds()
   }
 
-  rende () {
-    const { hospitals } = this.props
-    if (!hospitals) {
+  render () {
+    const { product, hospitals, hospitalNeeds } = this.props
+    if (!hospitals || !hospitalNeeds || !product) {
       return <Loader />
     }
     return <Container maxWidth="lg">
       <Box m="1rem">
-        <Typography variant="h4" align="center">Who needs protective masks?</Typography>
+        <Typography variant="h4" align="center">Who needs {product.name}?</Typography>
       </Box>
       <Grid container spacing={4}>
-        {hospitals.map(hospital => {
-          return <HospitalCard hospital={hospital} key={hospital.id}/> // why we don't put result of map to the variable? Because it returns to HospitalCard?
-        })}
+        {hospitals
+          .map(hospital => ({ ...hospital, quantity: calculateProductQuantityPerHospital(product.id, hospital.id, hospitalNeeds) }))
+          .filter(item => item.quantity > 0)
+          .map(hospital => {
+            return <HospitalCard hospital={hospital} key={hospital.id} productName={product.name}/> // why we don't put result of map to the variable? Because it returns to HospitalCard?
+          })}
       </Grid>
     </Container>
   }

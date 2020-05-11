@@ -32,11 +32,11 @@ export const useStyles = makeStyles((theme) => ({
     h8: {
       fontWeight: 'fontWeightBold'
     },
-    h6: {
-      color: '#2196F3'
-    },
     h9: {
       color: '#808080'
+    },
+    h6: {
+      color: '#2196F3'
     }
   }
 }))
