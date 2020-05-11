@@ -2,8 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { fetchProduct } from '../../actions'
 import Loader from '../Loader'
-import Product from '../product/ProductDetails'
-import HospitalList from '../product/HospitalList'
+import Product from './ProductDetails'
+import HospitalList from './HospitalList'
 
 class ProductShow extends React.Component {
   componentDidMount () {

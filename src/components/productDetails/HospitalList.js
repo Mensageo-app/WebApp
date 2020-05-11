@@ -14,7 +14,7 @@ class HospitalList extends React.Component {
     this.props.fetchHospitalNeeds()
   }
 
-  rende () {
+  render () {
     const { hospitals } = this.props
     if (!hospitals) {
       return <Loader />
