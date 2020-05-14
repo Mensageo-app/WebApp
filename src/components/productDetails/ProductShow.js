@@ -20,16 +20,14 @@ class ProductShow extends React.Component {
     }
 
     return (
-      <React.Fragment>
-        <Grid container spacing={2}>
-          <Grid item md={2} implementation="css" mdDown component={Hidden} />
-          <Grid container sm={8} md={8} lg={8} xl={8}>
-            <Product product={product}/>
-            <HospitalList product={product}/>
-          </Grid>
-          <Grid item md={2} implementation="css" mdDown component={Hidden} />
+      <Grid container spacing={2}>
+        <Grid item md={2} implementation="css" mdDown component={Hidden} />
+        <Grid container sm={8} md={8} lg={8} xl={8}>
+          <Product product={product}/>
+          <HospitalList product={product}/>
         </Grid>
-      </React.Fragment>
+        <Grid item md={2} implementation="css" mdDown component={Hidden} />
+      </Grid>
     )
   }
 };
