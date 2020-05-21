@@ -20,7 +20,7 @@ Launches the test runner in the interactive watch mode.<br />
 
 ### `npm run build`
 
-Builds the app for production to the `dist` folder.<br />
+Builds the app for production to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.<br />
@@ -44,7 +44,8 @@ You can find more options and information: https://github.com/formatjs/react-int
 Clone https://github.com/Mensageo-app/mock_api_server, run `npm install` and `npm start` to have a json server serving mock data for mensageo app.
 
 ### Environments 
-The project now uses parcel, so how to setup the environmental variables is covered [here](https://parceljs.org/env.html)
+The project now uses create-react-app, so how to setup the environmental variables is covered [here](https://create-react-app.dev/docs/adding-custom-environment-variables/)
+
 ### EsLint
 The style lint is added to the git hooks and it runs with every commit.
 To auto fix complains you can run `npx eslint --fix your_file`.

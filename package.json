@@ -3,21 +3,17 @@
   "version": "0.1.0",
   "description": "",
   "scripts": {
-    "start": "parcel public/index.html -p 3000",
-    "build": "NODE_ENV=production parcel build public/index.html",
-    "build-dev": "NODE_ENV=development parcel build public/index.html",
-    "serve-dev-build": "parcel serve dist/index.html",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "jest --watchAll=false",
+    "eject": "react-scripts eject",
     "dev": "jest --watchAll=true",
+    "serve": "serve -s build",
     "precommit": ".git/hooks/pre-commit",
     "lint": "npx eslint --fix ./src"
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "staticFiles": {
-    "staticPath": "public",
-    "watcherGlob": "**"
   },
   "browserslist": {
     "production": [
@@ -40,7 +36,6 @@
     "final-form": "^4.19.1",
     "lodash": "^4.17.15",
     "node-sass": "^4.14.1",
-    "parcel-plugin-static-files-copy": "^2.3.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-chartjs-2": "^2.7.6",
@@ -64,7 +59,7 @@
     "@babel/runtime": "^7.6.3",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
-    "babel-jest": "^25.4.0",
+    "babel-jest": "^24.9.0",
     "babel-preset-nano-react-app": "^0.1.0",
     "cssnano": "^4.1.10",
     "eslint": "^6.8.0",
@@ -75,10 +70,9 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-standard": "^4.0.1",
     "husky": "^4.2.5",
-    "jest": "^25.4.0",
-    "parcel-bundler": "^1.11.0",
-    "parcel-plugin-clean-dist": "0.0.6",
-    "react-test-renderer": "^16.13.1"
+    "jest": "^24.9.0",
+    "react-test-renderer": "^16.13.1",
+    "serve": "^11.3.0"
   },
   "babel": {
     "presets": [
