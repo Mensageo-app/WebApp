@@ -1,9 +1,0 @@
-component: website
-name: landing-page
-stage: dev
-
-inputs:
-  src:
-    src: ./src
-    hook: npm run build
-    dist: ./dist

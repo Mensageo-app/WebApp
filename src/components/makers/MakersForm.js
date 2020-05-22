@@ -21,7 +21,7 @@ const MakersForm = ({ open, onClose, hospitalName, product }) =>
             <Grid item xs={6}>
               <TextField fullWidth required id ="FullName" type="text" label="Full Name" />
 
-              <TextField fullWidth required id ="Telephone" type="tel" label="Telephone" inputProps={{ pattern: '[6,7,8,9][0-9]{8}' }}/>
+              <TextField fullWidth required id ="Telephone" type="tel" label="Telephone" inputProps={{ pattern: '^[6,7,8,9][0-9]{8}$' }}/>
 
               <TextField fullWidth required id ="Email" type="email" label="Email" />
 
@@ -30,7 +30,7 @@ const MakersForm = ({ open, onClose, hospitalName, product }) =>
             <Grid item xs={6}>
               <TextField fullWidth id ="Company" type="text" label="Company" />
 
-              <TextField fullWidth id ="AdditionalTelephone" type="tel" label="Additional telephone" inputProps={{ pattern: '[6,7,8,9][0-9]{8}' }}/>
+              <TextField fullWidth id ="AdditionalTelephone" type="tel" label="Additional telephone" inputProps={{ pattern: '^[6,7,8,9][0-9]{8}$' }}/>
 
               <TextField fullWidth id ="AdditionalEmail" type="email" label="Additional email" />
             </Grid>
