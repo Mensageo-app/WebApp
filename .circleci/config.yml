@@ -30,11 +30,12 @@ jobs:
               git clone --quiet https://${GH_TOKEN}@github.com/$TARGET_REPO built_website > /dev/null
               # Installing rsync
               echo "Installing rsync"
-              sudo apt-get -y install rsync
+              #sudo apt-get -y install rsync
               #go into directory and copy data we're interested in to that directory
               cd built_website
               echo "rsync built code with checked out code..."
-              rsync -r --exclude=.git --delete ../build/ ./
+              #rsync -r --exclude=.git --delete ../build/ ./
+              cp -r ../build/* .
               #add, commit and push files
               echo "add files to git..."
               git add -f .
