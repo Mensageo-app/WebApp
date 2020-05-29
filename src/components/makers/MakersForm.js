@@ -10,13 +10,9 @@ const MakersForm = ({ open, onClose, hospitalName, product, emailSentStatus, sen
   const [errors, setErrors] = useState({})
 
   const onChange = (event) => {
-    console.log('Event', event.target.id, event.target.value)
-
     event.preventDefault()
     event.persist()
     setInputs(inputs => ({ ...inputs, [event.target.id]: event.target.value }))
-
-    console.log('inputs: ', inputs)
   }
 
   const submitForm = (event) => {
@@ -38,7 +34,7 @@ const MakersForm = ({ open, onClose, hospitalName, product, emailSentStatus, sen
   return (
     <Dialog open={open} onClose={onClose}>
 
-      <Dialog open={emailSentStatus} onClose={handleSuccessDialogClosing} >
+      <Dialog open={!!emailSentStatus} onClose={handleSuccessDialogClosing} >
         <DialogContent>
           <DialogContentText>
             {emailSentStatus === 'OK' ? 'Email sent' : 'There was an error'}
@@ -46,7 +42,7 @@ const MakersForm = ({ open, onClose, hospitalName, product, emailSentStatus, sen
         </DialogContent>
 
       </Dialog>
-      <DialogTitle></DialogTitle>
+      <DialogTitle>Send Dialog</DialogTitle>
       <DialogContent>
         <DialogContentText>
         Thank you for contacting hospital {hospitalName} in order to donate {product}

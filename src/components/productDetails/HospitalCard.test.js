@@ -23,6 +23,6 @@ describe('<HospitalCard />', () => {
 
   it('Should show Form Makers dialog', () => {
     fireEvent.click(hospitalCard.getByText('Contact'))
-    expect(hospitalCard.getByText('FullName')).toBeTruthy()
+    expect(hospitalCard.getByText('Full Name')).toBeTruthy()
   })
 })

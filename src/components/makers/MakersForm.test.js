@@ -2,11 +2,15 @@ import React from 'react'
 import '@testing-library/jest-dom'
 import '@testing-library/jest-dom/extend-expect'
 import { render, fireEvent, wait } from '@testing-library/react'
+import { Provider } from 'react-redux'
 import MakersForm from './MakersForm'
+import configureStore from 'redux-mock-store'
+
+const mockStore = configureStore([])
 
 describe('<MakersForm open=false/>', () => {
   it('Should not render component', () => {
-    const { queryByText } = render(<MakersForm open={false} ></MakersForm>)
+    const { queryByText } = render(<Provider store={mockStore({})}><MakersForm open={false} ></MakersForm></Provider>)
     expect(queryByText('Submit')).toBeFalsy()
   })
 })
@@ -17,7 +21,7 @@ describe('<MakersForm open=true />', () => {
   const productName = 'Blue Thingies'
 
   beforeEach(() => {
-    component = render(<MakersForm open={true} hospitalName={hospitalName} product={productName}></MakersForm>)
+    component = render(<Provider store={mockStore({})}><MakersForm open={true} hospitalName={hospitalName} product={productName}></MakersForm></Provider>)
   })
   describe('Structural tests', () => {
     it('Renders component', () => {
