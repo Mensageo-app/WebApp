@@ -5,6 +5,11 @@ jobs:
   build-and-test:
     executor:
       name: node/default
+    working_directory: ~/repo
+    environment:
+      BRANCH: master
+      TARGET_REPO: Mensageo-app/mensageo-app.github.io.git
+      PELICAN_OUTPUT_FOLDER: output
     steps:
       - checkout
       - node/with-cache:
@@ -12,6 +17,38 @@ jobs:
             - run: npm install
             - run: npm test -- --watchAll=false
             - run: npx eslint ./src
+            - run: npm run build
+      - deploy:
+          name: Deploy static pages to Github Pages
+          command: |
+            if [ "${CIRCLE_BRANCH}" = "master" ]; then
+              echo -e "Starting to deploy to Github Pages\n"
+              cd ~/repo
+              git config --global user.email "builds@circleci.com"
+              git config --global user.name "CircleCI"
+              #using token clone gh-pages branch
+              git clone --quiet https://${GH_TOKEN}@github.com/$TARGET_REPO built_website > /dev/null
+              # Installing rsync
+              echo "Installing rsync"
+              sudo apt-get -y install rsync
+              #go into directory and copy data we're interested in to that directory
+              cd built_website
+              echo "rsync built code with checked out code..."
+              rsync -r --exclude=.git --delete ../build/ ./
+              #add, commit and push files
+              echo "add files to git..."
+              git add -f .
+              echo "commit files to git repository..."
+              if git commit -m "CircleCI build $CIRCLE_BUILD_NUM pushed to Github Pages" ; then
+                echo "git push files with force..."
+                git push -fq origin master > /dev/null
+                echo -e "Deploy completed\n"
+              else
+                echo "Content not changed, nothing to deploy"
+              fi
+            else
+              echo "Not master branch, dry run only"
+            fi
 workflows:
     build-and-test:
       jobs:
