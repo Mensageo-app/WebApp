@@ -28,13 +28,9 @@ jobs:
               git config --global user.name "CircleCI"
               #using token clone gh-pages branch
               git clone --quiet https://${GH_TOKEN}@github.com/$TARGET_REPO built_website > /dev/null
-              # Installing rsync
-              echo "Installing rsync"
-              #sudo apt-get -y install rsync
               #go into directory and copy data we're interested in to that directory
               cd built_website
-              echo "rsync built code with checked out code..."
-              #rsync -r --exclude=.git --delete ../build/ ./
+              echo "copy built code"
               cp -r ../build/* .
               #add, commit and push files
               echo "add files to git..."
