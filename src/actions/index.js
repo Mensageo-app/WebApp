@@ -1,5 +1,5 @@
 import api from '../apis/backend'
-import { FETCH_PRODUCTS, FETCH_PRODUCT, FETCH_HOSPITALS, FETCH_HOSPITAL_NEEDS, SEND_EMAIL } from './types'
+import { FETCH_PRODUCTS, FETCH_PRODUCT, FETCH_HOSPITALS, FETCH_HOSPITAL_NEEDS, SEND_EMAIL, RESET_SEND_EMAIL } from './types'
 
 export const fetchProducts = () => async dispatch => {
   const res = await api.get('/products')
@@ -22,7 +22,16 @@ export const fetchHospitalNeeds = () => async dispatch => {
 }
 
 export const sendEmail = (inputs) => async dispatch => {
-  const res = await api.post('/email', inputs)
-  console.log(res)
-  dispatch({ type: SEND_EMAIL, payload: res.data })
+  try {
+    const res = await api.post('/email', inputs)
+    console.log(res)
+    dispatch({ type: SEND_EMAIL, payload: res.status })
+  } catch (error) {
+    console.log(error)
+    dispatch({ type: SEND_EMAIL, payload: 500 })
+  }
+}
+
+export const resetEmailSendStatus = () => async dispatch => {
+  dispatch({ type: RESET_SEND_EMAIL })
 }

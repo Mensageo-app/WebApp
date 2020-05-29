@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchProduct } from '../../actions'
+import { fetchProducts } from '../../actions'
 import Loader from '../Loader'
 import Product from './ProductDetails'
 import HospitalList from './HospitalList'
@@ -9,7 +9,7 @@ import Hidden from '@material-ui/core/Hidden'
 
 class ProductShow extends React.Component {
   componentDidMount () {
-    this.props.fetchProduct(this.props.match.params.id)
+    this.props.fetchProducts()
   }
 
   render () {
@@ -34,4 +34,4 @@ class ProductShow extends React.Component {
 const mapStateToProps = (state, ownProps) => {
   return { product: state.products[ownProps.match.params.id] }
 }
-export default connect(mapStateToProps, { fetchProduct })(ProductShow)
+export default connect(mapStateToProps, { fetchProducts })(ProductShow)

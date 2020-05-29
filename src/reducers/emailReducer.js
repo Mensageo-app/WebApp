@@ -1,9 +1,17 @@
-import { SEND_EMAIL } from '../actions/types'
+import { SEND_EMAIL, RESET_SEND_EMAIL } from '../actions/types'
 
-export default (state = [], action) => {
+const MapHttpStatusToEmailStatus = status => {
+  if (status === 201) {
+    return 'OK'
+  } return 'ERROR'
+}
+
+export default (state = null, action) => {
   switch (action.type) {
     case SEND_EMAIL:
-      return action.payload
+      return MapHttpStatusToEmailStatus(action.payload)
+    case RESET_SEND_EMAIL:
+      return null
     default:
       return state
   }

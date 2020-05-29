@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-// import { connect } from 'react-redux'
-import { sendEmail } from '../../actions'
+import { connect } from 'react-redux'
+import { sendEmail, resetEmailSendStatus } from '../../actions'
 import Button from '@material-ui/core/Button'
+import validateForm from './ValidateForm'
 import { Paper, Grid, TextField, DialogTitle, Dialog, DialogContent, DialogContentText } from '@material-ui/core'
 
-const MakersForm = ({ open, onClose, hospitalName, product }) => {
+const MakersForm = ({ open, onClose, hospitalName, product, emailSentStatus, sendEmail, resetEmailSendStatus }) => {
   const [inputs, setInputs] = useState({})
   const [errors, setErrors] = useState({})
 
@@ -18,91 +19,29 @@ const MakersForm = ({ open, onClose, hospitalName, product }) => {
     console.log('inputs: ', inputs)
   }
 
-  const validateForm = (inputs) => {
-    const errors = {}
-
-    if (!inputs.FullName) {
-      errors.fullName = 'Name is required'
-    }
-
-    if (!inputs.Telephone) {
-      errors.telephone = 'Telephone is required'
-    } else if (/^[6,7,8,9][0-9]{8}$/.test(inputs.Telephone)) {
-      errors.telephone = 'Telephone is invalid'
-    }
-
-    if (!inputs.Email) {
-      errors.email = 'Email address is required'
-    } else if (!/\S+@\S+\.\S+/.test(inputs.Email)) {
-      errors.email = 'Email address is invalid'
-    }
-
-    if (!inputs.Amount) {
-      errors.amount = 'Amount is required'
-    } else if (!/^[0-9]+$/.test(inputs.Amount)) {
-      errors.amount = 'Amount is invalid'
-    }
-
-    if (!inputs.DonationInfo) {
-      errors.donationInfo = 'This field is required'
-    }
-
-    if (inputs.AdditionalTelefone && /^[6,7,8,9][0-9]{8}$/.test(inputs.AdditionalTelephone)) {
-      errors.additionalTelephone = 'Telephone invalid'
-    }
-
-    return errors
-  }
-
   const submitForm = (event) => {
-    console.log('Errors: ', errors)
-    console.log('Inputs', inputs)
-
     const validatoionsErrors = validateForm(inputs)
-    console.log('ValidationErrors', validatoionsErrors)
 
     setErrors(validatoionsErrors)
 
-    console.log('Errors after validation: ', errors)
-
-    /** TODO: Fix validations by using custom function */
     if (Object.keys(validatoionsErrors).length === 0) {
       sendEmail(inputs)
-
-      // httpApi.post('/email', transformState(inputs)).then(res => handleContactClicked()).catch(err => handleErrorContactClicked(err))
-      // handleContactClicked();
-
-      // 1. Dispacth --->
-      // 2. EmailSend : state: null, ---> state: OK | state:error
-      // 3.
-      // Call the API
-      // Then if OK - show Success Dialog
-      // But if not OK - show the Error Dialog
-      showSuccessDialog()
     }
     event.preventDefault()
   }
 
-  const [showDialog, setShowDialog] = useState(false)
-
-  const showSuccessDialog = () => {
-    setShowDialog(true)
-  }
-
   const handleSuccessDialogClosing = () => {
-    setShowDialog(false)
+    resetEmailSendStatus()
     onClose()
   }
-
-  // const showDialog = emailSend.state != null
 
   return (
     <Dialog open={open} onClose={onClose}>
 
-      <Dialog open={showDialog} onClose={handleSuccessDialogClosing} >
+      <Dialog open={emailSentStatus} onClose={handleSuccessDialogClosing} >
         <DialogContent>
           <DialogContentText>
-        Email sent
+            {emailSentStatus === 'OK' ? 'Email sent' : 'There was an error'}
           </DialogContentText>
         </DialogContent>
 
@@ -151,9 +90,9 @@ const MakersForm = ({ open, onClose, hospitalName, product }) => {
 
   )
 }
-// const mapStateToProps = (state) => {
-//   return {
-//     emailSent: state.emailSent
-//   }
-// }
-export default MakersForm
+const mapStateToProps = (state) => {
+  return {
+    emailSentStatus: state.emailSent
+  }
+}
+export default connect(mapStateToProps, { sendEmail, resetEmailSendStatus })(MakersForm)
