@@ -1,6 +1,5 @@
 import React from 'react'
 import Home from './home/Home'
-import history from '../history'
 
 import { HashRouter, Switch, Route } from 'react-router-dom'
 import CssBaseline from '@material-ui/core/CssBaseline'
