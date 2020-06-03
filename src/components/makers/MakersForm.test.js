@@ -148,12 +148,6 @@ describe('<MakersForm open=true />', () => {
         expect(component.queryByText('Amount is invalid')).toBeFalsy()
         expect(component.queryByText('Amount is required')).toBeFalsy()
       })
-      it('Should not accept letters', async () => {
-        await wait(() => fireEvent.change(component.getByLabelText('Amount *'), { target: { value: 'asdsf' } }))
-        fireEvent.click(component.getByText('Submit'))
-        //FIXME: the validation is not working
-        // expect(component.getByText('Amount is invalid')).toBeTruthy()
-      })
       it('Should accept only numbers starting from 1', async () => {
         await wait(() => fireEvent.change(component.getByLabelText('Amount *'), { target: { value: '0' } }))
         fireEvent.click(component.getByText('Submit'))

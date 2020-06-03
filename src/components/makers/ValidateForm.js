@@ -16,7 +16,8 @@ const validateForm = (inputs) => {
   } else if (!/\S+@\S+\.\S+/.test(inputs.Email)) {
     errors.email = 'Email address is invalid'
   }
-
+ 
+  console.log("Amount: ", inputs.Amount)
   if (!inputs.Amount) {
     errors.amount = 'Amount is required'
   } else if (!/^[0-9]+$/.test(inputs.Amount)) {
