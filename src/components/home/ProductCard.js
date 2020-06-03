@@ -26,7 +26,7 @@ const ProductCard = ({ product, quantity }) => {
         </CardContent>
       </Card>
       <CardActions>
-        <Button color="primary" variant="contained" fullWidth size="small" href={`/products/${product.id}`}>
+        <Button color="primary" variant="contained" fullWidth size="small" href={`/#/products/${product.id}`}>
           <FormattedMessage id="category.card.locate" />
         </Button>
       </CardActions>
