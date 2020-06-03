@@ -58,6 +58,7 @@
     "@babel/runtime": "^7.6.3",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
+    "axios-mock-adapter": "^1.18.1",
     "babel-jest": "^24.9.0",
     "babel-preset-nano-react-app": "^0.1.0",
     "cssnano": "^4.1.10",
