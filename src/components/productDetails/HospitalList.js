@@ -19,6 +19,7 @@ class HospitalList extends React.Component {
     if (!hospitals || !hospitalNeeds || !product) {
       return <Loader />
     }
+
     return <Container maxWidth="lg">
       <Box m="1rem">
         <Typography variant="h4" align="center">Who needs {product.name}?</Typography>
