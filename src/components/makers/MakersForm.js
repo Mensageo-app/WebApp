@@ -5,7 +5,10 @@ import Button from '@material-ui/core/Button'
 import validateForm from './ValidateForm'
 import { Paper, Grid, TextField, DialogTitle, Dialog, DialogContent, DialogContentText } from '@material-ui/core'
 
-const MakersForm = ({ open, onClose, hospitalName, product, emailSentStatus, sendEmail, resetEmailSendStatus }) => {
+const MakersForm = ({ open, onClose, hospitalNeeds, emailSentStatus, sendEmail, resetEmailSendStatus }) => {
+  const hospitalName = hospitalNeeds.hospital.name
+  const product = hospitalNeeds.product.name
+
   const [inputs, setInputs] = useState({})
   const [errors, setErrors] = useState({})
 
@@ -15,13 +18,27 @@ const MakersForm = ({ open, onClose, hospitalName, product, emailSentStatus, sen
     setInputs(inputs => ({ ...inputs, [event.target.id]: event.target.value }))
   }
 
+  const mapInputsToApiRequestData = (inputs) => {
+    return {
+      email: inputs.Email,
+      name: inputs.FullName,
+      additionalEmail: inputs.AdditionalEmail,
+      additionalPhoneNumber: inputs.AdditionalTelephone,
+      quantity: parseInt(inputs.Amount),
+      company: inputs.Company,
+      donationInfo: inputs.DonationInfo,
+      phoneNumber: inputs.Telephone,
+      hospitalNeedId: hospitalNeeds.id
+    }
+  }
+
   const submitForm = (event) => {
-    const validatoionsErrors = validateForm(inputs)
+    const validationsErrors = validateForm(inputs)
 
-    setErrors(validatoionsErrors)
+    setErrors(validationsErrors)
 
-    if (Object.keys(validatoionsErrors).length === 0) {
-      sendEmail(inputs)
+    if (Object.keys(validationsErrors).length === 0) {
+      sendEmail(mapInputsToApiRequestData(inputs))
     }
     event.preventDefault()
   }
@@ -59,18 +76,18 @@ const MakersForm = ({ open, onClose, hospitalName, product, emailSentStatus, sen
               <Grid item xs={6}>
                 <TextField fullWidth required onChange={onChange} id ="FullName" type="text" label="Full Name" helperText={errors.fullName}/>
 
-                <TextField fullWidth required onChange={onChange} id ="Telephone" type="tel" label="Telephone" inputProps={{ pattern: '^[6,7,8,9][0-9]{8}$' }} helperText={errors.telephone}/>
+                <TextField fullWidth required onChange={onChange} id ="Telephone" type="tel" label="Telephone" helperText={errors.telephone}/>
 
                 <TextField fullWidth required onChange={onChange} id ="Email" type="email" label="Email" helperText={errors.email}/>
 
-                <TextField fullWidth required onChange={onChange} id ="Amount" type="number" label="Amount" inputProps={{ min: 1 }} helperText={errors.amount}/>
+                <TextField fullWidth required onChange={onChange} id ="Amount" type="number" label="Amount" helperText={errors.amount}/>
               </Grid>
               <Grid item xs={6}>
                 <TextField fullWidth onChange={onChange} id ="Company" type="text" label="Company" />
 
-                <TextField fullWidth onChange={onChange} id ="AdditionalTelephone" type="tel" label="Additional telephone" inputProps={{ pattern: '^[6,7,8,9][0-9]{8}$' }} helperText={errors.additionaTelephone}/>
+                <TextField fullWidth onChange={onChange} id ="AdditionalTelephone" type="tel" label="Additional telephone" helperText={errors.additionalTelephone}/>
 
-                <TextField fullWidth onChange={onChange} id ="AdditionalEmail" type="email" label="Additional email" />
+                <TextField fullWidth onChange={onChange} id ="AdditionalEmail" type="email" label="Additional email" helperText={errors.additionalEmail}/>
               </Grid>
               <Grid item xs={12}>
                 <TextField fullWidth required onChange={onChange} id ="DonationInfo" type="text" label="Information about the donation" multiline rowsMax={5} helperText={errors.donationInfo}/>
