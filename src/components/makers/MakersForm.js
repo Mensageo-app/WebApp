@@ -51,13 +51,12 @@ const MakersForm = ({ open, onClose, hospitalNeeds, emailSentStatus, sendEmail, 
   return (
     <Dialog open={open} onClose={onClose}>
 
-      <Dialog open={!!emailSentStatus} onClose={handleSuccessDialogClosing} >
+      <Dialog open={!!emailSentStatus} onClose={handleSuccessDialogClosing}>
         <DialogContent>
-          <DialogContentText>
-            {emailSentStatus === 'OK' ? 'Email sent' : 'There was an error'}
+          <DialogContentText style={{ padding: 45 }} >
+            {emailSentStatus === 'OK' ? 'Your offer was sent successfully. We will get back to you as soon as possible. Thanks!' : 'We had a problem sending your offer, we apologize for any inconvenience. Please try again'}
           </DialogContentText>
         </DialogContent>
-
       </Dialog>
       <DialogTitle>Send Dialog</DialogTitle>
       <DialogContent>
