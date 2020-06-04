@@ -48,7 +48,7 @@ const Footer = () => {
       <Divider className={classes.dividerStyle} />
       <List className={classes.footerListStyle}>
         <FooterListElement idMessage="footer.feedback" href="#" onClick={handleClickOpenFeedBack} />
-        <FooterListElement idMessage="footer.aboutus" href="/aboutus" />
+        <FooterListElement idMessage="footer.aboutus" href="/#/aboutus" />
         <FooterListElement idMessage="footer.joinus" href="#" onClick={handleClickOpenJoinUs} />
       </List>
       <Feedback open={openFeedback} handleClose={handleClickCloseFeedBack} />
