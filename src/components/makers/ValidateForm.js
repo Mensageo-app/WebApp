@@ -16,10 +16,13 @@ const validateForm = (inputs) => {
   } else if (!/\S+@\S+\.\S+/.test(inputs.Email)) {
     errors.email = 'Email address is invalid'
   }
-
+ 
+  console.log("Amount: ", inputs.Amount)
   if (!inputs.Amount) {
     errors.amount = 'Amount is required'
   } else if (!/^[0-9]+$/.test(inputs.Amount)) {
+    errors.amount = 'Amount is invalid'
+  } else if (inputs.Amount < 1) {
     errors.amount = 'Amount is invalid'
   }
 
@@ -27,8 +30,12 @@ const validateForm = (inputs) => {
     errors.donationInfo = 'This field is required'
   }
 
-  if (inputs.AdditionalTelefone && !/^[6,7,8,9][0-9]{8}$/.test(inputs.AdditionalTelephone)) {
-    errors.additionalTelephone = 'Telephone invalid'
+  if (inputs.AdditionalTelephone && !/^[6,7,8,9][0-9]{8}$/.test(inputs.AdditionalTelephone)) {
+    errors.additionalTelephone = 'Telephone is invalid'
+  }
+
+  if (inputs.AdditionalEmail && !/\S+@\S+\.\S+/.test(inputs.AdditionalEmail)) {
+    errors.additionalEmail = 'Email address is invalid'
   }
 
   return errors
