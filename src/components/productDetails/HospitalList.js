@@ -19,7 +19,6 @@ class HospitalList extends React.Component {
     if (!hospitals || !hospitalNeeds || !product) {
       return <Loader />
     }
-    console.log(this.props,hospitalNeeds.filter(hospitalNeed => hospitalNeed.quantity > 0));
 
     return <Container maxWidth="lg">
       <Box m="1rem">
