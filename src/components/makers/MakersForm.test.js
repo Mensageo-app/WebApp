@@ -223,7 +223,7 @@ describe('<MakersForm open=true />', () => {
         hospitalNeedId: 1
       }
 
-      mockApi.onPost('/emails', expectedInput).reply(200)
+      mockApi.onPost('/emails/create', expectedInput).reply(200)
 
       await wait(() => fireEvent.change(component.getByLabelText('Full Name *'), { target: { value: 'Name' } }))
       await wait(() => fireEvent.change(component.getByLabelText('Telephone *'), { target: { value: '666666666' } }))
