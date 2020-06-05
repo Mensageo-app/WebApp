@@ -1,5 +1,5 @@
 import api from '../apis/backend'
-import { FETCH_PRODUCTS, FETCH_PRODUCT, FETCH_HOSPITALS, FETCH_HOSPITAL_NEEDS, SEND_EMAIL, RESET_SEND_EMAIL } from './types'
+import { FETCH_PRODUCTS, FETCH_PRODUCT, FETCH_HOSPITALS, FETCH_HOSPITAL_NEEDS, FETCH_HOSPITAL_NEEDS_BY_PRODUCT, SEND_EMAIL, RESET_SEND_EMAIL } from './types'
 
 export const fetchProducts = () => async dispatch => {
   const res = await api.get('/products')
@@ -19,6 +19,11 @@ export const fetchHospitals = () => async dispatch => {
 export const fetchHospitalNeeds = (productId) => async dispatch => {
   const res = await api.get(`/hospital_needs/by_product/${productId}`)
   dispatch({ type: FETCH_HOSPITAL_NEEDS, payload: res.data })
+}
+
+export const fetchHospitalNeedsByProduct = (productId) => async dispatch => {
+  const res = await api.get(`/hospital_needs/by_product/${productId}`)
+  dispatch({ type: FETCH_HOSPITAL_NEEDS_BY_PRODUCT, payload: res.data })
 }
 
 export const sendEmail = (inputs) => async dispatch => {

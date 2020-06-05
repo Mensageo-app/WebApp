@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchHospitals, fetchHospitalNeeds } from '../../actions'
+import { fetchHospitals, fetchHospitalNeedsByProduct } from '../../actions'
 import HospitalCard from './HospitalCard'
 import Grid from '@material-ui/core/Grid'
 import Container from '@material-ui/core/Container'
@@ -11,7 +11,7 @@ import Loader from '../Loader'
 class HospitalList extends React.Component {
   componentDidMount () {
     this.props.fetchHospitals()
-    this.props.fetchHospitalNeeds(this.props.product.id)
+    this.props.fetchHospitalNeedsByProduct(this.props.product.id)
   }
 
   render () {
@@ -42,4 +42,4 @@ const mapStateToProps = (state) => {
     hospitalNeeds: state.hospitalNeeds ? state.hospitalNeeds : []
   }
 }
-export default connect(mapStateToProps, { fetchHospitals, fetchHospitalNeeds })(HospitalList)
+export default connect(mapStateToProps, { fetchHospitals, fetchHospitalNeedsByProduct })(HospitalList)
