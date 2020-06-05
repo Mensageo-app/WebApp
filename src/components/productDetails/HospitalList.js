@@ -11,7 +11,7 @@ import Loader from '../Loader'
 class HospitalList extends React.Component {
   componentDidMount () {
     this.props.fetchHospitals()
-    this.props.fetchHospitalNeeds()
+    this.props.fetchHospitalNeeds(this.props.product.id)
   }
 
   render () {
