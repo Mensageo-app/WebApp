@@ -29,5 +29,9 @@
 	"joinus.content": "Envía un mail con tu información de contacto a mensageocov@gmail.com y te responderemos lo antes posible. Gracias!",
 	"feedback.title": "Feedback",
 	"feedback.content": "Envía un mail con tu feedback a mensageocov@gmail.com. Gracias!",
-	"dialog.close": "Cerrar"
+	"dialog.close": "Cerrar",
+	"email.form.text":"Para que el hospital pueda evaluar si su donación puede ser aceptada o no, le pedimos que incluya toda la información relevante sobre su donación, incluyendo si dispone de algún tipo de certificado o si se trata de un modelo que ya ha sido certificado",
+	"email.form.title": "Enviar contacto",
+	"email.form.confirmation.ok": "Su oferta ha sido enviada satisfactoriamnete. Nos pondremos en contacto con sted tan pronto como sea posible. Muchas gracias!!",
+	"email.form.confirmation.error": "Ha habido un problema con su oferta. Sentimos el inconveniente. Por favor, inténtelo de nuevo."
 }
