@@ -5,6 +5,8 @@ import { render, fireEvent } from '@testing-library/react'
 import HospitalCard from './HospitalCard'
 import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
+import { IntlProvider } from 'react-intl'
+import messagesEn from './../../translations/en.json'
 
 const mockStore = configureStore([])
 
@@ -32,7 +34,7 @@ describe('<HospitalCard />', () => {
   let hospitalCard
   beforeEach(() => {
     const store = mockStore({})
-    hospitalCard = render(<Provider store={store}> <HospitalCard hospitalNeeds ={hospitalNeeds} key={hospitalNeeds.id}></HospitalCard></Provider>)
+    hospitalCard = render(<Provider store={store}><IntlProvider locale='en' messages={messagesEn}><HospitalCard hospitalNeeds ={hospitalNeeds} key={hospitalNeeds.id}></HospitalCard></IntlProvider></Provider>)
   })
 
   it('Should not show Form Makers dialog', () => {
@@ -41,6 +43,6 @@ describe('<HospitalCard />', () => {
 
   it('Should show Form Makers dialog', () => {
     fireEvent.click(hospitalCard.getByText('Contact'))
-    expect(hospitalCard.getByText('Full Name')).toBeTruthy()
+    expect(hospitalCard.getByText('Submit')).toBeTruthy()
   })
 })
