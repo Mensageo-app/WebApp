@@ -26,5 +26,6 @@
 	"joinus.content": "Envía un mail con tu información de contacto a mensageocov@gmail.com y te responderemos lo antes posible. Gracias!",
 	"feedback.title": "Feedback",
 	"feedback.content": "Envía un mail con tu feedback a mensageocov@gmail.com. Gracias!",
-	"dialog.close": "Cerrar"
+	"dialog.close": "Cerrar",
+	"dialog.phoneprefix": "+34"
 }

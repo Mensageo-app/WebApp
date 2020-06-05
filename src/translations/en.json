@@ -26,5 +26,6 @@
   "joinus.content": "Please send an e-mail with your contact information to mensageocov@gmail.com and we will get back to you as soon as possible. Thanks!",
   "feedback.title": "Feedback",
   "feedback.content": "Please send an e-mail with your feedback to mensageocov@gmail.com. Thanks!",
-  "dialog.close": "Close"
+  "dialog.close": "Close",
+  "dialog.phoneprefix": "+34"
 }
