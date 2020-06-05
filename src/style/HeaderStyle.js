@@ -14,5 +14,8 @@ export const useStyles = makeStyles((theme) => ({
   },
   heroTitle: {
     width: '70%'
+  },
+  fullHeightCard: {
+    height: '100%'
   }
 }))
