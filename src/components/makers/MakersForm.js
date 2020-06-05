@@ -4,6 +4,7 @@ import { sendEmail, resetEmailSendStatus } from '../../actions'
 import Button from '@material-ui/core/Button'
 import validateForm from './ValidateForm'
 import { Paper, Grid, TextField, DialogTitle, Dialog, DialogContent, DialogContentText } from '@material-ui/core'
+import { FormattedMessage } from 'react-intl'
 
 const MakersForm = ({ open, onClose, hospitalNeeds, emailSentStatus, sendEmail, resetEmailSendStatus }) => {
   const hospitalName = hospitalNeeds.hospital.name
@@ -54,20 +55,19 @@ const MakersForm = ({ open, onClose, hospitalNeeds, emailSentStatus, sendEmail, 
       <Dialog open={!!emailSentStatus} onClose={handleSuccessDialogClosing}>
         <DialogContent>
           <DialogContentText style={{ padding: 45 }} >
-            {emailSentStatus === 'OK' ? 'Your offer was sent successfully. We will get back to you as soon as possible. Thanks!' : 'We had a problem sending your offer, we apologize for any inconvenience. Please try again'}
+            {emailSentStatus === 'OK' ? <FormattedMessage id={'email.form.confirmation.ok'}/> : <FormattedMessage id={'email.form.confirmation.error'}/>}
           </DialogContentText>
         </DialogContent>
       </Dialog>
-      <DialogTitle>Send Dialog</DialogTitle>
+      <DialogTitle >
+        <FormattedMessage id={'email.form.title'}/>
+      </DialogTitle>
       <DialogContent>
         <DialogContentText>
         Thank you for contacting hospital {hospitalName} in order to donate {product}
           <br />
           <br />
-        In order for the hospital to be able to evaluate if your donation can be accepted or not,
-        we kindly request you to include all the relevant information to this end, including if you
-        hold any kind of certification or if you are using a model that has already
-        been certified
+          <FormattedMessage id={'email.form.text'}/>
         </DialogContentText>
         <form>
           <Paper style={{ padding: 45 }} elevation={0} >

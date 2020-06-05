@@ -8,6 +8,8 @@ import configureStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 import MockAdapter from 'axios-mock-adapter'
 import axios from '../../apis/backend'
+import { IntlProvider } from 'react-intl'
+import messagesEn from './../../translations/en.json'
 
 const mockStore = configureStore([thunk])
 const store = mockStore({})
@@ -45,7 +47,7 @@ describe('<MakersForm open=true />', () => {
   let component
 
   beforeEach(() => {
-    component = render(<Provider store={store}><MakersForm open={true} hospitalNeeds={hospitalNeeds}></MakersForm></Provider>)
+    component = render(<Provider store={store}><IntlProvider locale='en' messages={messagesEn} ><MakersForm open={true} hospitalNeeds={hospitalNeeds}></MakersForm></IntlProvider></Provider>)
   })
   describe('Structural tests', () => {
     it('Renders component', () => {
