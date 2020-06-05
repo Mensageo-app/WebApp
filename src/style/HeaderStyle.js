@@ -16,7 +16,6 @@ export const useStyles = makeStyles((theme) => ({
     width: '70%'
   },
   fullHeightCard: {
-    height: '100%',
-    minHeight: '140px'
+    height: '100%'
   }
 }))
