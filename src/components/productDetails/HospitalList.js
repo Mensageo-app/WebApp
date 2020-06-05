@@ -27,7 +27,8 @@ class HospitalList extends React.Component {
       <Grid container spacing={4}>
         {hospitalNeeds
         // calculateProductQuantityPerHospital(hospitalNeed.product.id, hospitalNeed.hospital.id, hospitalNeeds)
-          .filter(hospitalNeed => hospitalNeed && hospitalNeed.product.id === product.id && hospitalNeed.quantity > 0)
+          .map(hospitalNeed => ({ ...hospitalNeed, quantity: hospitalNeed.quantity }))
+          .filter(item => item.quantity > 0)
           .map(hospitalNeed => {
             return <HospitalCard hospitalNeeds={hospitalNeed} key={hospitalNeed.id}/> // why we don't put result of map to the variable? Because it returns to HospitalCard?
           })}
