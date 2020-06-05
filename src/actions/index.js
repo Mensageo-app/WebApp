@@ -17,7 +17,7 @@ export const fetchHospitals = () => async dispatch => {
 }
 
 export const fetchHospitalNeeds = (productId) => async dispatch => {
-  const res = await api.get(`/hospital_needs/by_product/${productId}`)
+  const res = await api.get('/hospital_needs')
   dispatch({ type: FETCH_HOSPITAL_NEEDS, payload: res.data })
 }
 
