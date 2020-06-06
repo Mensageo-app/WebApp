@@ -73,23 +73,23 @@ const MakersForm = ({ open, onClose, hospitalNeeds, emailSentStatus, sendEmail, 
           <Paper style={{ padding: 45 }} elevation={0} >
             <Grid container alignItems="flex-start" spacing={2}>
               <Grid item xs={6}>
-                <TextField fullWidth required onChange={onChange} id ="FullName" type="text" label="Full Name" helperText={errors.fullName}/>
+                <TextField fullWidth required onChange={onChange} id ="FullName" type="text" label="Full Name" helperText={errors.fullName} error = {!!errors.fullName}/>
 
-                <TextField fullWidth required onChange={onChange} id ="Telephone" type="tel" label="Telephone" helperText={errors.telephone}/>
+                <TextField fullWidth required onChange={onChange} id ="Telephone" type="tel" label="Telephone" helperText={errors.telephone} error = {!!errors.telephone}/>
 
-                <TextField fullWidth required onChange={onChange} id ="Email" type="email" label="Email" helperText={errors.email}/>
+                <TextField fullWidth required onChange={onChange} id ="Email" type="email" label="Email" helperText={errors.email} error ={!!errors.email}/>
 
-                <TextField fullWidth required onChange={onChange} id ="Amount" type="number" label="Amount" helperText={errors.amount}/>
+                <TextField fullWidth required onChange={onChange} id ="Amount" type="number" label="Amount" helperText={errors.amount} error={!!errors.amount}/>
               </Grid>
               <Grid item xs={6}>
                 <TextField fullWidth onChange={onChange} id ="Company" type="text" label="Company" />
 
-                <TextField fullWidth onChange={onChange} id ="AdditionalTelephone" type="tel" label="Additional telephone" helperText={errors.additionalTelephone}/>
+                <TextField fullWidth onChange={onChange} id ="AdditionalTelephone" type="tel" label="Additional telephone" helperText={errors.additionalTelephone} error={!!errors.additionalTelephone}/>
 
-                <TextField fullWidth onChange={onChange} id ="AdditionalEmail" type="email" label="Additional email" helperText={errors.additionalEmail}/>
+                <TextField fullWidth onChange={onChange} id ="AdditionalEmail" type="email" label="Additional email" helperText={errors.additionalEmail} error={!!errors.additionalEmail}/>
               </Grid>
               <Grid item xs={12}>
-                <TextField fullWidth required onChange={onChange} id ="DonationInfo" type="text" label="Information about the donation" multiline rowsMax={5} helperText={errors.donationInfo}/>
+                <TextField fullWidth required onChange={onChange} id ="DonationInfo" type="text" label="Information about the donation" multiline rowsMax={5} helperText={errors.donationInfo} error={!!errors.donationInfo}/>
               </Grid>
               <Grid item xs={12} align="right" style={{ paddingTop: 20, paddingRight: 80 }}>
                 <Button onClick={submitForm} variant="contained" color="primary" type="submit">Submit</Button>
