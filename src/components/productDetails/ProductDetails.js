@@ -21,12 +21,11 @@ const ProductDetails = ({ product }) => {
         </Grid>
         <Grid item sm container>
           <Grid item>
-          <Typography variant="body1" component="p" position={'right'}>{product.description}</Typography>
+            <Typography variant="body1" component="p" position={'right'}>{product.description}</Typography>
           </Grid>
         </Grid>
       </Grid>
     </Container>
-    
   )
 }
 
