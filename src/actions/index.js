@@ -28,7 +28,7 @@ export const fetchHospitalNeedsByProduct = (productId) => async dispatch => {
 
 export const sendEmail = (inputs) => async dispatch => {
   try {
-    const res = await api.post('/emails/create', inputs)
+    const res = await api.post('/emails', inputs)
     dispatch({ type: SEND_EMAIL, payload: res.status })
   } catch (error) {
     console.log(error)
