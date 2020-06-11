@@ -24,12 +24,12 @@ const ProductCard = ({ product, quantity }) => {
             {product.name}
           </Typography>
         </CardContent>
+        <CardActions>
+          <Button color="primary" variant="contained" fullWidth size="small" href={`/#/products/${product.id}`}>
+            <FormattedMessage id="category.card.locate" />
+          </Button>
+        </CardActions>
       </Card>
-      <CardActions>
-        <Button color="primary" variant="contained" fullWidth size="small" href={`/#/products/${product.id}`}>
-          <FormattedMessage id="category.card.locate" />
-        </Button>
-      </CardActions>
     </Grid>
   )
 }
