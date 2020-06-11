@@ -19,7 +19,7 @@ const Header = () => {
         <div className={classes.heroButtons}>
           <Grid container spacing={2} justify="center">
             <Grid item md={6}>
-              <Information>
+              <Information position={'left'}>
                 <div className={classes.fullHeightCard}>
                   <p>
                     <FormattedMessage id={'information.left.visualize'} defaultMessage=" " />
